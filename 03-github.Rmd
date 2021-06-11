@@ -14,7 +14,8 @@ To use github as your repository manager;
 8. On the resulting window, click on 'upload an existing file'   
 ![import repo to github](tutorial_screenshots/gh_uploadfiles.png)
 
-This will take you to a new window, from which you can drag-&-drop or browse to your files. 
+This will take you to a new window, from which you can drag-&-drop or browse to your files.   
+
 9. Click on 'choose your files'.  
 10. Navigate with the file explorer to where we saved our 'NAPBook_tutorial' folder in your pc.  
 11. Select everything within this folder, and click 'Open'.  
