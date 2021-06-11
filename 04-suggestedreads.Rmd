@@ -1,0 +1,7 @@
+# Suggested Reads
+
+Here we include a list of links to articles and other material that might be useful to your journey
+
+1. [R mardown basics](https://bookdown.org/yihui/rmarkdown/)
+2. [Bookdown basics](https://bookdown.org/yihui/bookdown/)
+3. [GitHub for bookdown](https://bookdown.org/yihui/bookdown/github.html)

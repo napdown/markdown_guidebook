@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Getting started | An introduction to markdown basics</title>
+  <meta name="description" content="Chapter 2 Getting started | An introduction to markdown basics" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Getting started | An introduction to markdown basics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Getting started | An introduction to markdown basics" />
+  
+  
+  
+
+<meta name="author" content="The A Team :)" />
+
+
+<meta name="date" content="2021-06-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="bookdown.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Introduction to Markdown Basics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#opening-a-markdown-file"><i class="fa fa-check"></i><b>1.1</b> Opening a markdown file</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#rstudio-windows-explained"><i class="fa fa-check"></i><b>1.1.1</b> Rstudio windows explained:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-packages"><i class="fa fa-check"></i><b>1.2</b> Installing packages</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#loading-libraries"><i class="fa fa-check"></i><b>1.3</b> Loading Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#about-rmarkdown"><i class="fa fa-check"></i><b>2.1</b> About rmarkdown</a></li>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#editing-in-markdown"><i class="fa fa-check"></i><b>2.2</b> Editing in markdown</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="getting-started.html"><a href="getting-started.html#headers"><i class="fa fa-check"></i><b>2.2.1</b> Headers</a></li>
+<li class="chapter" data-level="2.2.2" data-path="getting-started.html"><a href="getting-started.html#bold-and-italic-text"><i class="fa fa-check"></i><b>2.2.2</b> Bold and italic text</a></li>
+<li class="chapter" data-level="2.2.3" data-path="getting-started.html"><a href="getting-started.html#create-lists"><i class="fa fa-check"></i><b>2.2.3</b> Create Lists</a></li>
+<li class="chapter" data-level="2.2.4" data-path="getting-started.html"><a href="getting-started.html#manual-line-breaks"><i class="fa fa-check"></i><b>2.2.4</b> Manual line breaks</a></li>
+<li class="chapter" data-level="2.2.5" data-path="getting-started.html"><a href="getting-started.html#insert-links"><i class="fa fa-check"></i><b>2.2.5</b> Insert links</a></li>
+<li class="chapter" data-level="2.2.6" data-path="getting-started.html"><a href="getting-started.html#insert-figuresimages"><i class="fa fa-check"></i><b>2.2.6</b> Insert figures/images</a></li>
+<li class="chapter" data-level="2.2.7" data-path="getting-started.html"><a href="getting-started.html#insert-block-quotes"><i class="fa fa-check"></i><b>2.2.7</b> Insert block quotes</a></li>
+<li class="chapter" data-level="2.2.8" data-path="getting-started.html"><a href="getting-started.html#insert-code-chunks"><i class="fa fa-check"></i><b>2.2.8</b> Insert code chunks</a></li>
+<li class="chapter" data-level="2.2.9" data-path="getting-started.html"><a href="getting-started.html#create-tables"><i class="fa fa-check"></i><b>2.2.9</b> Create tables</a></li>
+<li class="chapter" data-level="2.2.10" data-path="getting-started.html"><a href="getting-started.html#page-breaks"><i class="fa fa-check"></i><b>2.2.10</b> Page breaks</a></li>
+<li class="chapter" data-level="2.2.11" data-path="getting-started.html"><a href="getting-started.html#process-a-markdown-document-to-desired-output"><i class="fa fa-check"></i><b>2.2.11</b> Process a markdown document to desired output</a></li>
+<li class="chapter" data-level="2.2.12" data-path="getting-started.html"><a href="getting-started.html#references"><i class="fa fa-check"></i><b>2.2.12</b> References</a></li>
+<li class="chapter" data-level="2.2.13" data-path="getting-started.html"><a href="getting-started.html#pandoc-knitr"><i class="fa fa-check"></i><b>2.2.13</b> Pandoc &amp; Knitr</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>3</b> Bookdown</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="bookdown.html"><a href="bookdown.html#setting-up-an-open-nap-document"><i class="fa fa-check"></i><b>3.1</b> Setting up an Open NAP document</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="bookdown.html"><a href="bookdown.html#some-things-to-note"><i class="fa fa-check"></i><b>3.1.1</b> Some things to note</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="bookdown.html"><a href="bookdown.html#some-troubleshooting"><i class="fa fa-check"></i><b>3.2</b> Some Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="github-github-pages.html"><a href="github-github-pages.html"><i class="fa fa-check"></i><b>4</b> GitHub &amp; GitHub Pages</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="github-github-pages.html"><a href="github-github-pages.html#sharing-on-github"><i class="fa fa-check"></i><b>4.1</b> Sharing on GitHub</a></li>
+<li class="chapter" data-level="4.2" data-path="github-github-pages.html"><a href="github-github-pages.html#publishing-to-github-pages"><i class="fa fa-check"></i><b>4.2</b> Publishing to GitHub pages</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="suggested-reads.html"><a href="suggested-reads.html"><i class="fa fa-check"></i><b>5</b> Suggested Reads</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An introduction to markdown basics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="getting-started" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Getting started</h1>
+<div id="about-rmarkdown" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> About rmarkdown</h2>
+<p>R markdown is a file document that allows you to write, save and execute code, as well as text and figures to help generate reproducible reports that can be shared in several formats.
+The file extension is .rmd.<br />
+A markdown file has three main sections;</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>YAML header</strong><br />
+This is where your document metadata go to e.g your document title, author, date, output file type etc.
+This parameters are set when opening a new .rmd file. And more can be set after.
+This section MUST always be at the beginning of your document and between a set of three dashes i.e three dashes before section and three dashes after section.</p></li>
+<li><p><strong>Text</strong><br />
+Your narration/prose in markdown format. More details about formatting in subsequent sections.</p></li>
+<li><p><strong>Code chunk(s)</strong><br />
+They start with ```{r}</p>
+<p>and end with ```</p></li>
+</ol>
+</div>
+<div id="editing-in-markdown" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Editing in markdown</h2>
+<div id="headers" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Headers</h3>
+<p>To create headers for your reports/document e.g. chapters, sub-chapters and so on; use the hash sign ‘#’ in front of the title. Sequentially increase the number of "#’ signs to denote subsequent header levels.<br />
+Insert blank line before each header (except in the beginning of document).</p>
+<p># Header level 1<br />
+## Header level 2<br />
+### Header level 3<br />
+#### Header level 4</p>
+<p><em>Note: For the purpose of this example, I have added a space before each line so that r doesn’t create the headers. Remove the space to create the headers</em></p>
+</div>
+<div id="bold-and-italic-text" class="section level3" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Bold and italic text</h3>
+<p>To create emphasis in your markdown texts, use an asterisk before and after text <em>to italicize</em> or double asterisk <strong>to make your text bold</strong>.<br />
+Alternatively, you may use single underscore <em>for italics</em> or double underscore <strong>for bold</strong>.</p>
+</div>
+<div id="create-lists" class="section level3" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Create Lists</h3>
+<div id="ordered-list" class="section level4" number="2.2.3.1">
+<h4><span class="header-section-number">2.2.3.1</span> Ordered list</h4>
+<p>Use numbers to order your list items.
+and a plus sign ‘+’ to create sub-items on your list.</p>
+<ol style="list-style-type: decimal">
+<li>List item 1<br />
+</li>
+<li>List item 2<br />
+</li>
+</ol>
+<ul>
+<li>Sub-item 1<br />
+</li>
+<li>Sub-item 2<br />
+</li>
+<li>Sub-item 3<br />
+</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>List item 3</li>
+</ol>
+</div>
+<div id="unordered-list" class="section level4" number="2.2.3.2">
+<h4><span class="header-section-number">2.2.3.2</span> Unordered list</h4>
+<p>Use an asterisk ’*’ before list item to create an unordered list.<br />
+Use a plus ‘+’ sign for sub-items.<br />
+Use tab command or two spaces on your keyboard to indent the list items</p>
+<ul>
+<li>List item</li>
+<li>List item
+<ul>
+<li>Sub-item</li>
+<li>Sub-item
+<ul>
+<li>Sub-sub item</li>
+</ul></li>
+</ul></li>
+<li>List item</li>
+</ul>
+</div>
+</div>
+<div id="manual-line-breaks" class="section level3" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Manual line breaks</h3>
+<p>Use two or more spaces at the end of a line<br />
+to insert a line break</p>
+</div>
+<div id="insert-links" class="section level3" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Insert links</h3>
+<p>You may insert a link using the plain http address such as <a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a> or insert it as a linked phrase using square brackets and parenthesis such as <a href="https://rmarkdown.rstudio.com/">our link phrase goes here</a>.</p>
+</div>
+<div id="insert-figuresimages" class="section level3" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Insert figures/images</h3>
+<p>To insert images to our document, we use the same syntax as links, but start with an exclamation mark’!’ before syntax.
+For an image from a url use; <code>![text to accompany your image e.g a caption](your https link)</code><br />
+or for an image file in your local directory use, <code>[your image text](path to local image file)</code>.<br />
+For instance, I downloaded the UN Climate logo and saved it as a .jpg in my working directory as exact name <code>unfccc_logo.jpg</code>
+The following syntax will insert the logo into my document:
+<code>![UN Climate logo](unfccc_logo.jpg)</code>. However, this draws the logo on entire page width. Therefore to specify the drawing width of the image to x inches, we add the the command ’{width=xin}` at the end. <img src="unfccc_logo.jpg" style="width:1in" alt="UN Climate logo" /></p>
+<p><strong>When inserting images from local file, it is strongly recommended to have the file in your working directory.</strong></p>
+</div>
+<div id="insert-block-quotes" class="section level3" number="2.2.7">
+<h3><span class="header-section-number">2.2.7</span> Insert block quotes</h3>
+<p>To insert a block quote within your text, use the greater than sign ‘&gt;’ in the beginning of quote. The quote must begin on a new line, and remember to insert blank line before and after. For instance;</p>
+<blockquote>
+<p>This exercise may seem complicated at first,
+but trust me, it is not. You will agree with me sooner than later :)</p>
+</blockquote>
+</div>
+<div id="insert-code-chunks" class="section level3" number="2.2.8">
+<h3><span class="header-section-number">2.2.8</span> Insert code chunks</h3>
+<p>To write your code use open code chunk with three backticks
+and the curly brackets {insert your code language}, hit enter on your keyboard, insert your code and hit enter, close the code chunk with another three backticks.<br />
+For code in r language;</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="getting-started.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div>
+<p>For code in python;</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="getting-started.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># your code here</span></span></code></pre></div>
+</div>
+<div id="create-tables" class="section level3" number="2.2.9">
+<h3><span class="header-section-number">2.2.9</span> Create tables</h3>
+<div id="option-1" class="section level4" number="2.2.9.1">
+<h4><span class="header-section-number">2.2.9.1</span> Option 1</h4>
+<p>Create table headers with dashed lines below the header title. Separate headers with tab or space between the headers and corresponding dashed lines.<br />
+Type in row values below the dashed lines. The row value length may exceed the dashed line length but MUST not extend into the next header’s dashed line.<br />
+<strong>Column alignment is based on the position of the header/column title relative to the dashed line below it.</strong><br />
+To insert a caption or alt text to your table use, full colon ‘:’ followed by your caption text at the end of the table.<br />
+Alternatively, use ‘Table: your caption or text.’</p>
+<table>
+<caption>you may insert table caption here<br />
+Table: Alternative caption option</caption>
+<thead>
+<tr class="header">
+<th align="left">Header 1</th>
+<th align="right">Header 2</th>
+<th align="center">Header 3</th>
+<th>Header 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">12343</td>
+<td align="right">895</td>
+<td align="center">0.5867891011</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td align="left">Name</td>
+<td align="right">Rank</td>
+<td align="center">score</td>
+<td>remark</td>
+</tr>
+<tr class="odd">
+<td align="left">Type</td>
+<td align="right">3</td>
+<td align="center">TRUE</td>
+<td>12.1</td>
+</tr>
+<tr class="even">
+<td align="left">Left align</td>
+<td align="right">Right align</td>
+<td align="center">Center</td>
+<td>Default</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="option-2" class="section level4" number="2.2.9.2">
+<h4><span class="header-section-number">2.2.9.2</span> Option 2</h4>
+<p>You may also create simple tables using a <code>knitr</code> function called <code>kable</code>.<br />
+The code below tells r that we want to create a data set with 3 columns, X, Y &amp; Z, assigning them the values enclosed in the letter c. The letter c used together with brackets indicates a list of elements. Thus, in the example below, we tell r that our column X, will contain a list of 4 elements i.e 20, 30, 10 &amp; 50.<br />
+Then we tell r to create the data set by combining all the columns X, Y &amp; Z into a data frame.
+Finally, we call the function <code>kable</code> and enter the data we created. This function converts or data frame into a table format.<br />
+Optionally, you may add a caption to the table and specify cell alignment.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="getting-started.html#cb3-1" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">10</span>, <span class="dv">50</span>)    <span class="co"># create variable X</span></span>
+<span id="cb3-2"><a href="getting-started.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Y<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">1.4</span>, <span class="fl">4.3</span>,<span class="fl">5.9</span>,<span class="fl">2.7</span>)    <span class="co"># create variable Y</span></span>
+<span id="cb3-3"><a href="getting-started.html#cb3-3" aria-hidden="true" tabindex="-1"></a>Z<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;yes&quot;</span>,<span class="st">&quot;no&quot;</span>,<span class="st">&quot;true&quot;</span>,<span class="st">&quot;false&quot;</span>)   <span class="co"># create variable Z</span></span>
+<span id="cb3-4"><a href="getting-started.html#cb3-4" aria-hidden="true" tabindex="-1"></a>mydata<span class="ot">&lt;-</span><span class="fu">data.frame</span>(X,Y,Z) <span class="co"># combine variables into table format</span></span>
+<span id="cb3-5"><a href="getting-started.html#cb3-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(mydata, <span class="at">caption =</span> <span class="st">&quot;My first simple table with kable&quot;</span>, <span class="at">align =</span> <span class="st">&#39;c&#39;</span>) <span class="co"># plot table with kable</span></span></code></pre></div>
+<table>
+<caption><span id="tab:kable">Table 2.1: </span>My first simple table with kable</caption>
+<thead>
+<tr class="header">
+<th align="center">X</th>
+<th align="center">Y</th>
+<th align="center">Z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">20</td>
+<td align="center">1.4</td>
+<td align="center">yes</td>
+</tr>
+<tr class="even">
+<td align="center">30</td>
+<td align="center">4.3</td>
+<td align="center">no</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">5.9</td>
+<td align="center">true</td>
+</tr>
+<tr class="even">
+<td align="center">50</td>
+<td align="center">2.7</td>
+<td align="center">false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note that our code chunk is labelled ‘kable.’ You can label code chunks as in the brackets below</strong></p>
+<p>(open chunk ```{r your chunk name}</p>
+<p>your code</p>
+<p>close code chunk with ```)</p>
+<p>This will be useful for cross-referencing.</p>
+</div>
+</div>
+<div id="page-breaks" class="section level3" number="2.2.10">
+<h3><span class="header-section-number">2.2.10</span> Page breaks</h3>
+<p>Use three or more asterisks or dashes to insert a page break.<br />
+<em>Remember to add a blank line before the asterisks or dashes</em></p>
+<hr />
+</div>
+<div id="process-a-markdown-document-to-desired-output" class="section level3" number="2.2.11">
+<h3><span class="header-section-number">2.2.11</span> Process a markdown document to desired output</h3>
+<p>To create the desired output file document from the markdown format, use the function <code>render ("your .rmd file name)</code>.<br />
+Alternatively,and most commonly used, is the <code>Knit</code> button from the markdown script environment. The button is a blue ball of yarn around a crotchet, and is labeled ‘Knit’
+When a document is rendered, rmarkdown saves the results/output file into your working directory, giving it the same name as your .rmd file, but with relevant extension (e.g. as html if output type was set to html)</p>
+</div>
+<div id="references" class="section level3" number="2.2.12">
+<h3><span class="header-section-number">2.2.12</span> References</h3>
+<div id="citationsbibliography" class="section level4" number="2.2.12.1">
+<h4><span class="header-section-number">2.2.12.1</span> Citations/Bibliography</h4>
+<p>To add citations to our document, we need to add our reference document details to a text file saved in the .bib format e.g myrefences.bib. We also need to add this file to our bibliography parameter in the yaml section of the index.rmd file.<br />
+The references for this exercise are saved in the file ‘book.bib.’<br />
+To add your reference documents to the .bib file, use the BibTeX citation style i.e</p>
+<blockquote>
+<p><span class="citation">(<a href="#ref-documentype" role="doc-biblioref"><strong>documentype?</strong></a>)</span>{documentname,<br />
+title={document title},<br />
+author={author name(s)},<br />
+year={publication year},<br />
+publisher={publisher name},<br />
+url={document url}<br />
+}</p>
+</blockquote>
+<p>Sites such as <a href="https://scholar.google.com/">Google Scholar</a> have ready to use/ formatted bibliography styles such as BibTeX, EndNote etc. You may copy-paste the BibTeX text into your .bib file in r.</p>
+<p>You may have as many documents listed in the .bib file but rmarkdown will only include those that have been referenced within your markdown document.<br />
+To reference documents in your narrative and thus, have them included in the reference section, use the format <code>[@documentname]</code>.<br />
+For instance, <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span> and <span class="citation">(<a href="#ref-team2013r" role="doc-biblioref">Team and others 2013</a>)</span> are the only references in my book.bib file.<br />
+The references will appear at the end of the chapter where they are referenced, as well as in the overall ‘References’ section.</p>
+</div>
+<div id="chapter-references" class="section level4" number="2.2.12.2">
+<h4><span class="header-section-number">2.2.12.2</span> Chapter References</h4>
+<p>To reference chapter, type in the chapter title inside square brackets. For instance, this command references our first chapter <a href="index.html#prerequisites">Prerequisites</a>.<br />
+The same applies to section headers. Just type [section header name] e.g <a href="getting-started.html#page-breaks">Page breaks</a>.</p>
+</div>
+<div id="table-figure-references" class="section level4" number="2.2.12.3">
+<h4><span class="header-section-number">2.2.12.3</span> Table &amp; Figure References</h4>
+<p>To reference figures use syntax @ref(fig:code chunk label) or @ref(tab:code chunk label) for tables.
+For instance, we created our kable table in the code chunk named kable. To reference this table anywhere in our document, just type in command <a href="getting-started.html#tab:kable">2.1</a>.<br />
+This will insert a reference link to table <a href="getting-started.html#tab:kable">2.1</a>.</p>
+</div>
+</div>
+<div id="pandoc-knitr" class="section level3" number="2.2.13">
+<h3><span class="header-section-number">2.2.13</span> Pandoc &amp; Knitr</h3>
+<p><code>Pandoc</code> is a universal document converter designed to convert thousands of markup languages. So when we create our document in markdown and want to output it as a pdf, pandoc does the work.<br />
+<code>Knitr</code> on the other hand, is an r package that enables the integration of yaml, text and code evaluations into an output document. <code>Knitr</code> contains the <code>Knit</code> function through which we render our rmarkdown documents to our desired output format.
+When you render a document in rmarkdown (or call the knit function), the rmarkdown document is converted to a basic markdown language (.md) which is then converted by pandoc to say html, pdf, word, etc as per user specifications.
+<code>Knitr</code> and <code>pandoc</code> come in bundled with rmarkdown, and thus, there is no need to install them separately.<br />
+However, should you need to install pandoc as standalone, you may do so from the <a href="http://pandoc.org">Pandoc homepage</a>. In this regard, it is important to note that in as much as standalone installations may provide much higher versions of the software than what is already bundled in r, they are often not streamlined for use in r, and may thus cause some compatibility issues.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-team2013r" class="csl-entry">
+Team, R Core, and others. 2013. <span>“R: A Language and Environment for Statistical Computing.”</span>
+</div>
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["markdown_guidebook.pdf", "markdown_guidebook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

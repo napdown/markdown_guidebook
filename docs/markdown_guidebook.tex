@@ -1,0 +1,886 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={An introduction to markdown basics},
+  pdfauthor={The A Team :)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{An introduction to markdown basics}
+\author{The A Team :)}
+\date{2021-06-11}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{prerequisites}{%
+\chapter{Prerequisites}\label{prerequisites}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  You have installed R (\url{https://www.r-project.org/})
+\item
+  You have installed RStudio (\url{https://www.rstudio.com/products/rstudio/download/})
+\end{enumerate}
+
+\hypertarget{opening-a-markdown-file}{%
+\section{Opening a markdown file}\label{opening-a-markdown-file}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Launch your r/studio app.
+  Your rstudio workspace should look more or less similar to this: \includegraphics{tutorial_screenshots/rstudio_panels.png}
+\end{enumerate}
+
+If your rstudio opens up with 4 windows instead of 3, skip next step.\\
+2. From the main menu, go to File-\textgreater\textgreater New File-\textgreater\textgreater R Markdown.
+You shoukd have a window like this: \includegraphics{tutorial_screenshots/open_rmd_file.png}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Fill in the details for your document title and author. Leave the rest as default.\\
+\item
+  Click Ok
+\end{enumerate}
+
+This opens up your 4th rstudio window with an rmarkdown script.\\
+Now your app area should look more or less like this; \includegraphics{tutorial_screenshots/rstudio_panels_4.png}\\
+The arrangement may however be different. If so, do not worry, it's just semantics.\\
+\emph{As you might have seen, you may open other scripts such as R, python, SQL etc in similar manner.}
+
+\hypertarget{rstudio-windows-explained}{%
+\subsection{Rstudio windows explained:}\label{rstudio-windows-explained}}
+
+\begin{itemize}
+\item
+  \textbf{The Source}\\
+  This is your scripting area.\\
+  You may write, edit and run your code from here.
+\item
+  \textbf{The Console}\\
+  All processing in r happens here. You may this is the r kitchen.
+  When you run your code, this is where it is evaluated.\\
+  You may also use the console to write and execute your code. However, you can not save your code, nor can you edit it (you will have to rewrite it). Thus, it is always advisable to write your code in the script/source area.\\
+\item
+  \textbf{The Environment}\\
+  This panel holds your data objects and their metadata. As you create or add new objects into your project, they will appear in this window. You may view and remove objects.
+  It also contains the `History' tab from which you may view all your r processing history.\\
+\item
+  \textbf{The Files/Plots/Packages/Help Panel}\\
+  This panel provides a shortcut/alternative to different functions such as to access your project files, to view plots from your code evaluations, install packages and access the Help resource. You may add/remove items here but we will learn that much later. For now we leave it as is.
+\end{itemize}
+
+\hypertarget{installing-packages}{%
+\section{Installing packages}\label{installing-packages}}
+
+Options:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  From the console;\\
+  After the greater than (\textgreater) sign, write command \texttt{install.packages("package\ name")} and hit enter on your keyboard.\\
+  See example;\\
+  \includegraphics{tutorial_screenshots/install_rmkdn_consl.png}\\
+\item
+  In script window\\
+  Inside your script write command \texttt{install.packages("package\ name")}\\
+  Click on `Run' (Run button is on the top right of your source panel).\\
+  Alternatively, if your write your command in a code chunk, you may hit the `Play' button on far right of your code chunk. See example;\\
+  \includegraphics{tutorial_screenshots/install_rmkdn_scrpt.png}
+\end{enumerate}
+
+We see more about code chunks in the next chapter.\\
+3. From the menu bar\\
+From the menu bar, go the the tab `Tools' and select `Install Packages'.
+
+You should see a window like this one \includegraphics{tutorial_screenshots/install_rmkdn_toolstab.png}
+
+In the `Install from' field, select `Repository (CRAN)', then enter the name(s) of packages to be installed.\\
+Leave everything else as default. Click Install.\\
+4. From Files/Plots/Packages/Help Panel\\
+Click on the `Packages' tab. There are 2 tabs under this, Install \& Update.\\
+Click on Install.\\
+If the `Install from' is not set to `Repository (CRAN)', set it so, and enter name(s) of packages to be installed.\\
+Leave everything else as default. Click Install.
+
+\textbf{Note:} \emph{Packages can only be installed once. To mean, if you close your r/rstudio app and come back to it the next day/session, you do not need to install the packages you already installed in your previous session. You will only need to load their libraries (see next section)}
+
+\hypertarget{loading-libraries}{%
+\section{Loading Libraries}\label{loading-libraries}}
+
+To be able to make use of the packages installed, you need to call their libraries. Most libraries take the name of the package. For instance, for the package \texttt{rmakdown}, the respective library is \texttt{rmarkdown}.To call the rmarkdown library, use command \texttt{library(rmarkdown)}.
+So in general to load/call libraries use command \texttt{library(name\ of\ library)}.\\
+You may load libraries in the console or in your script.
+
+\textbf{Note:} \emph{Unlike packages,library functions expire when you close a project or end a session. Therefore, each time you open an r session, you have to load/call relevant libraries}
+
+\hypertarget{getting-started}{%
+\chapter{Getting started}\label{getting-started}}
+
+\hypertarget{about-rmarkdown}{%
+\section{About rmarkdown}\label{about-rmarkdown}}
+
+R markdown is a file document that allows you to write, save and execute code, as well as text and figures to help generate reproducible reports that can be shared in several formats.
+The file extension is .rmd.\\
+A markdown file has three main sections;
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{YAML header}\\
+  This is where your document metadata go to e.g your document title, author, date, output file type etc.
+  This parameters are set when opening a new .rmd file. And more can be set after.
+  This section MUST always be at the beginning of your document and between a set of three dashes i.e three dashes before section and three dashes after section.
+\item
+  \textbf{Text}\\
+  Your narration/prose in markdown format. More details about formatting in subsequent sections.
+\item
+  \textbf{Code chunk(s)}\\
+  They start with ```\{r\}
+
+  and end with ```
+\end{enumerate}
+
+\hypertarget{editing-in-markdown}{%
+\section{Editing in markdown}\label{editing-in-markdown}}
+
+\hypertarget{headers}{%
+\subsection{Headers}\label{headers}}
+
+To create headers for your reports/document e.g.~chapters, sub-chapters and so on; use the hash sign `\#' in front of the title. Sequentially increase the number of "\#' signs to denote subsequent header levels.\\
+Insert blank line before each header (except in the beginning of document).
+
+\# Header level 1\\
+\#\# Header level 2\\
+\#\#\# Header level 3\\
+\#\#\#\# Header level 4
+
+\emph{Note: For the purpose of this example, I have added a space before each line so that r doesn't create the headers. Remove the space to create the headers}
+
+\hypertarget{bold-and-italic-text}{%
+\subsection{Bold and italic text}\label{bold-and-italic-text}}
+
+To create emphasis in your markdown texts, use an asterisk before and after text \emph{to italicize} or double asterisk \textbf{to make your text bold}.\\
+Alternatively, you may use single underscore \emph{for italics} or double underscore \textbf{for bold}.
+
+\hypertarget{create-lists}{%
+\subsection{Create Lists}\label{create-lists}}
+
+\hypertarget{ordered-list}{%
+\subsubsection{Ordered list}\label{ordered-list}}
+
+Use numbers to order your list items.
+and a plus sign `+' to create sub-items on your list.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  List item 1\\
+\item
+  List item 2\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Sub-item 1\\
+\item
+  Sub-item 2\\
+\item
+  Sub-item 3\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  List item 3
+\end{enumerate}
+
+\hypertarget{unordered-list}{%
+\subsubsection{Unordered list}\label{unordered-list}}
+
+Use an asterisk '*' before list item to create an unordered list.\\
+Use a plus `+' sign for sub-items.\\
+Use tab command or two spaces on your keyboard to indent the list items
+
+\begin{itemize}
+\tightlist
+\item
+  List item
+\item
+  List item
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sub-item
+  \item
+    Sub-item
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Sub-sub item
+    \end{itemize}
+  \end{itemize}
+\item
+  List item
+\end{itemize}
+
+\hypertarget{manual-line-breaks}{%
+\subsection{Manual line breaks}\label{manual-line-breaks}}
+
+Use two or more spaces at the end of a line\\
+to insert a line break
+
+\hypertarget{insert-links}{%
+\subsection{Insert links}\label{insert-links}}
+
+You may insert a link using the plain http address such as \url{https://rmarkdown.rstudio.com/} or insert it as a linked phrase using square brackets and parenthesis such as \href{https://rmarkdown.rstudio.com/}{our link phrase goes here}.
+
+\hypertarget{insert-figuresimages}{%
+\subsection{Insert figures/images}\label{insert-figuresimages}}
+
+To insert images to our document, we use the same syntax as links, but start with an exclamation mark'!' before syntax.
+For an image from a url use; \texttt{!{[}text\ to\ accompany\ your\ image\ e.g\ a\ caption{]}(your\ https\ link)}\\
+or for an image file in your local directory use, \texttt{{[}your\ image\ text{]}(path\ to\ local\ image\ file)}.\\
+For instance, I downloaded the UN Climate logo and saved it as a .jpg in my working directory as exact name \texttt{unfccc\_logo.jpg}
+The following syntax will insert the logo into my document:
+\texttt{!{[}UN\ Climate\ logo{]}(unfccc\_logo.jpg)}. However, this draws the logo on entire page width. Therefore to specify the drawing width of the image to x inches, we add the the command '\{width=xin\}` at the end. \includegraphics[width=1in,height=\textheight]{unfccc_logo.jpg}
+
+\textbf{When inserting images from local file, it is strongly recommended to have the file in your working directory.}
+
+\hypertarget{insert-block-quotes}{%
+\subsection{Insert block quotes}\label{insert-block-quotes}}
+
+To insert a block quote within your text, use the greater than sign `\textgreater{}' in the beginning of quote. The quote must begin on a new line, and remember to insert blank line before and after. For instance;
+
+\begin{quote}
+This exercise may seem complicated at first,
+but trust me, it is not. You will agree with me sooner than later :)
+\end{quote}
+
+\hypertarget{insert-code-chunks}{%
+\subsection{Insert code chunks}\label{insert-code-chunks}}
+
+To write your code use open code chunk with three backticks
+and the curly brackets \{insert your code language\}, hit enter on your keyboard, insert your code and hit enter, close the code chunk with another three backticks.\\
+For code in r language;
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# your code here}
+\end{Highlighting}
+\end{Shaded}
+
+For code in python;
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# your code here}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{create-tables}{%
+\subsection{Create tables}\label{create-tables}}
+
+\hypertarget{option-1}{%
+\subsubsection{Option 1}\label{option-1}}
+
+Create table headers with dashed lines below the header title. Separate headers with tab or space between the headers and corresponding dashed lines.\\
+Type in row values below the dashed lines. The row value length may exceed the dashed line length but MUST not extend into the next header's dashed line.\\
+\textbf{Column alignment is based on the position of the header/column title relative to the dashed line below it.}\\
+To insert a caption or alt text to your table use, full colon `:' followed by your caption text at the end of the table.\\
+Alternatively, use `Table: your caption or text'.
+
+\begin{longtable}[]{@{}lrcl@{}}
+\caption{you may insert table caption here\\
+Table: Alternative caption option}\tabularnewline
+\toprule
+Header 1 & Header 2 & Header 3 & Header 4 \\
+\midrule
+\endfirsthead
+\toprule
+Header 1 & Header 2 & Header 3 & Header 4 \\
+\midrule
+\endhead
+12343 & 895 & 0.5867891011 & 1 \\
+Name & Rank & score & remark \\
+Type & 3 & TRUE & 12.1 \\
+Left align & Right align & Center & Default \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{option-2}{%
+\subsubsection{Option 2}\label{option-2}}
+
+You may also create simple tables using a \texttt{knitr} function called \texttt{kable}.\\
+The code below tells r that we want to create a data set with 3 columns, X, Y \& Z, assigning them the values enclosed in the letter c.~The letter c used together with brackets indicates a list of elements. Thus, in the example below, we tell r that our column X, will contain a list of 4 elements i.e 20, 30, 10 \& 50.\\
+Then we tell r to create the data set by combining all the columns X, Y \& Z into a data frame.
+Finally, we call the function \texttt{kable} and enter the data we created. This function converts or data frame into a table format.\\
+Optionally, you may add a caption to the table and specify cell alignment.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{,}\DecValTok{30}\NormalTok{,}\DecValTok{10}\NormalTok{, }\DecValTok{50}\NormalTok{)    }\CommentTok{\# create variable X}
+\NormalTok{Y}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\FloatTok{1.4}\NormalTok{, }\FloatTok{4.3}\NormalTok{,}\FloatTok{5.9}\NormalTok{,}\FloatTok{2.7}\NormalTok{)    }\CommentTok{\# create variable Y}
+\NormalTok{Z}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"yes"}\NormalTok{,}\StringTok{"no"}\NormalTok{,}\StringTok{"true"}\NormalTok{,}\StringTok{"false"}\NormalTok{)   }\CommentTok{\# create variable Z}
+\NormalTok{mydata}\OtherTok{\textless{}{-}}\FunctionTok{data.frame}\NormalTok{(X,Y,Z) }\CommentTok{\# combine variables into table format}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(mydata, }\AttributeTok{caption =} \StringTok{"My first simple table with kable"}\NormalTok{, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{) }\CommentTok{\# plot table with kable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tab:kable}My first simple table with kable}
+\centering
+\begin{tabular}[t]{c|c|c}
+\hline
+X & Y & Z\\
+\hline
+20 & 1.4 & yes\\
+\hline
+30 & 4.3 & no\\
+\hline
+10 & 5.9 & true\\
+\hline
+50 & 2.7 & false\\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Note that our code chunk is labelled `kable'. You can label code chunks as in the brackets below}
+
+(open chunk ```\{r your chunk name\}
+
+your code
+
+close code chunk with ```)
+
+This will be useful for cross-referencing.
+
+\hypertarget{page-breaks}{%
+\subsection{Page breaks}\label{page-breaks}}
+
+Use three or more asterisks or dashes to insert a page break.\\
+\emph{Remember to add a blank line before the asterisks or dashes}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{process-a-markdown-document-to-desired-output}{%
+\subsection{Process a markdown document to desired output}\label{process-a-markdown-document-to-desired-output}}
+
+To create the desired output file document from the markdown format, use the function \texttt{render\ ("your\ .rmd\ file\ name)}.\\
+Alternatively,and most commonly used, is the \texttt{Knit} button from the markdown script environment. The button is a blue ball of yarn around a crotchet, and is labeled `Knit'
+When a document is rendered, rmarkdown saves the results/output file into your working directory, giving it the same name as your .rmd file, but with relevant extension (e.g.~as html if output type was set to html)
+
+\hypertarget{references}{%
+\subsection{References}\label{references}}
+
+\hypertarget{citationsbibliography}{%
+\subsubsection{Citations/Bibliography}\label{citationsbibliography}}
+
+To add citations to our document, we need to add our reference document details to a text file saved in the .bib format e.g myrefences.bib. We also need to add this file to our bibliography parameter in the yaml section of the index.rmd file.\\
+The references for this exercise are saved in the file `book.bib'.\\
+To add your reference documents to the .bib file, use the BibTeX citation style i.e
+
+\begin{quote}
+\citet{documentype}\{documentname,\\
+title=\{document title\},\\
+author=\{author name(s)\},\\
+year=\{publication year\},\\
+publisher=\{publisher name\},\\
+url=\{document url\}\\
+\}
+\end{quote}
+
+Sites such as \href{https://scholar.google.com/}{Google Scholar} have ready to use/ formatted bibliography styles such as BibTeX, EndNote etc. You may copy-paste the BibTeX text into your .bib file in r.
+
+You may have as many documents listed in the .bib file but rmarkdown will only include those that have been referenced within your markdown document.\\
+To reference documents in your narrative and thus, have them included in the reference section, use the format \texttt{{[}@documentname{]}}.\\
+For instance, \citep{xie2015} and \citep{team2013r} are the only references in my book.bib file.\\
+The references will appear at the end of the chapter where they are referenced, as well as in the overall `References' section.
+
+\hypertarget{chapter-references}{%
+\subsubsection{Chapter References}\label{chapter-references}}
+
+To reference chapter, type in the chapter title inside square brackets. For instance, this command references our first chapter \protect\hyperlink{prerequisites}{Prerequisites}.\\
+The same applies to section headers. Just type {[}section header name{]} e.g \protect\hyperlink{page-breaks}{Page breaks}.
+
+\hypertarget{table-figure-references}{%
+\subsubsection{Table \& Figure References}\label{table-figure-references}}
+
+To reference figures use syntax @ref(fig:code chunk label) or @ref(tab:code chunk label) for tables.
+For instance, we created our kable table in the code chunk named kable. To reference this table anywhere in our document, just type in command \ref{tab:kable}.\\
+This will insert a reference link to table \ref{tab:kable}.
+
+\hypertarget{pandoc-knitr}{%
+\subsection{Pandoc \& Knitr}\label{pandoc-knitr}}
+
+\texttt{Pandoc} is a universal document converter designed to convert thousands of markup languages. So when we create our document in markdown and want to output it as a pdf, pandoc does the work.\\
+\texttt{Knitr} on the other hand, is an r package that enables the integration of yaml, text and code evaluations into an output document. \texttt{Knitr} contains the \texttt{Knit} function through which we render our rmarkdown documents to our desired output format.
+When you render a document in rmarkdown (or call the knit function), the rmarkdown document is converted to a basic markdown language (.md) which is then converted by pandoc to say html, pdf, word, etc as per user specifications.
+\texttt{Knitr} and \texttt{pandoc} come in bundled with rmarkdown, and thus, there is no need to install them separately.\\
+However, should you need to install pandoc as standalone, you may do so from the \href{http://pandoc.org}{Pandoc homepage}. In this regard, it is important to note that in as much as standalone installations may provide much higher versions of the software than what is already bundled in r, they are often not streamlined for use in r, and may thus cause some compatibility issues.
+
+\hypertarget{bookdown}{%
+\chapter{Bookdown}\label{bookdown}}
+
+\hypertarget{setting-up-an-open-nap-document}{%
+\section{Setting up an Open NAP document}\label{setting-up-an-open-nap-document}}
+
+We will use the package \texttt{bookdown} to generate NAP document in a book format. Journal articles or reports can be produced in the same way.
+We will also use the package \texttt{tinytex} to build pdf format of the book document.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  First, launch the rstudio app in your pc.
+\item
+  Install the bookdown and tinytex packages. Use any of the methods shown in the \protect\hyperlink{installing-packages}{Installing packages} section.\\
+\item
+  Then from the menu bar go to \texttt{File\textgreater{}-\textgreater{}New\ Project-\textgreater{}\textgreater{}New\ Directory-\textgreater{}\textgreater{}Book\ Project\ using\ bookdown}.\\
+  A new window appears\\
+  \includegraphics[width=4in,height=\textheight]{tutorial_screenshots/open_bkdown_proj.png}
+\item
+  Give your bookdown directory a name `NAPBook\_tutorial'. This is the name of a new folder that will be created to store your bookdwon project files.\\
+\item
+  In the `Create project as subdirectory of' field, use the browse button to navigate to where you want to save your bookdown project folder.\\
+\item
+  After you select the directory location, you are returned to the `Create Book project\ldots{}' window. Click `create project'.\\
+  A new project session opens up, with skeleton chapters and other sections and metadata files. \includegraphics{tutorial_screenshots/bkdn_proj_window_label.png}\\
+  Your project window might appear with panel arrangements different from mine/in screenshot.
+  Your project files can be accessed from the Files tab in bottom right of the project window.
+  Each chapter is compiled from a single .rmd file, and always starts with a first level header sign `\#'.\\
+  From the files pane, you can open any chapter, and edit it to your liking.\\
+  Lets take a look at the '\_bookdown.yml' file.\\
+\item
+  From the `Files' tab, click on the \_bookdown.yml' file.\\
+  The file open up in your script/source pane. Notice, the book\_filename takes the name of the folder we created when opening the project.\\
+\item
+  Let's add the line \texttt{output\_dir:\ "docs"} to this file.
+  See screenshot below;\\
+  \includegraphics{tutorial_screenshots/add_docs_to_bkdnyaml.png}
+\end{enumerate}
+
+This command creates an additional folder called `docs' and specifies that we want to store our outputs here. This folder is necessary for creating webpages from our book project.\\
+9. Save changes. Use the `Save' icon on the script window or Ctrl + S on your keyboard.\\
+10. Next, click to open the '\_output.yml' file.\\
+11. Let's edit the line that contains the title to our book. Change the text `A Minimal Book \ldots{}' to `NAP Book Tutorial'.\\
+Should look like this;
+\includegraphics{tutorial_screenshots/edit_title_output_yaml.png}\\
+Ignore everything else for now :)\\
+12. Save.\\
+13. Scroll down your files to find the `index.rmd' file. Click to open.\\
+14. Edit the title, author \& description fields in the yaml header section.\\
+15. Delete all text, except the last code chunk.\\
+16. Add a chapter named `Preliminaries' before the code chunk.\\
+Chapters are created using the first level header \#.\\
+17. Add sections to your chapter using second level header \#\#.\\
+Your script shoud look more or less similar to this;
+\includegraphics{tutorial_screenshots/edit_index.png}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  Next, open the `README.md' file and edit the text to this `This is an example NAP designed to help you get started with creating your NAPs with bookdown.'. Or add a description of your choice.
+\item
+  Save your work.\\
+\item
+  Open the `01-Intro.rmd' file.\\
+\item
+  Type in the chapter title `Introduction'\\
+\item
+  Type in sub-chapters with the names `Overview of the NAP Process, NAP Vision, NAP Mandate, NAP Process in Sierra Leone, Functions, Guiding Principles, Goals, Overview of the NAP'\\
+  Your script should resemble this;
+  \includegraphics{tutorial_screenshots/intro_chapter.png}
+  This text has been borrowed from the Sierra Leone NAP. Use the text from the screenshot below to edit the next two chapters (.rmd files). i.e `02-literature.rmd \& 03-methods.rmd'.\\
+  \includegraphics{tutorial_screenshots/SLeone_NAP_chapters.png}
+\end{enumerate}
+
+For the interest of time, let's delete chapters 4 and 5 from our project files.\\
+23. From the files tab (bottom right), click on the check-boxes to the left of the application and summary .rmd files to select them.
+24. Click delete\\
+\includegraphics{tutorial_screenshots/delete_4_5.png}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{24}
+\tightlist
+\item
+  Save project.\\
+\item
+  From the `Environment' window, click on the tab `Build'.\\
+\item
+  On the new window that opens, click the hammer/Build Book button to start rendering the book. \includegraphics{tutorial_screenshots/build_book.png}\\
+  This process may take a few minutes. You can monitor the progress in the Environment window.\\
+  When the process is done, your book should open up in an html window as below;
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{tutorial_screenshots/built_book.png}
+\caption{Your book}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{27}
+\tightlist
+\item
+  Scroll down your chapters to find the `References' chapter. Oops! No reference! Don't sweat.\\
+\item
+  Back to our project, from the Files tab in bottom right window, open the file named `book.bib'. This is the text file holding our citations.Currently, only one. You will notice that the document type is a book, and the the book name is `xie2015'.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{tutorial_screenshots/add_citation.png}
+\caption{Adding bibliography}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{29}
+\tightlist
+\item
+  To cite this book in our NAP book, open square brackets and type the `@' sign followed by the book name. i.e \citep{xie2015}.\\
+\item
+  Let's use this citation say in the Introduction chapter. Open the chapter, and insert the text `Our only citation at the moment is \citep{xie2015}'. See example:
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{tutorial_screenshots/cite_book.png}
+\caption{cite book}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{31}
+\tightlist
+\item
+  Run the `Build Book' command again.\\
+\item
+  Now you should see that your book has been added to the `References' section, both in the chapter in which you cited it as well as in the overall References Chapter.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{tutorial_screenshots/reference_incl.png}
+\caption{citation added to ref}
+\end{figure}
+
+\textbf{Congratulations!!!}
+
+\hypertarget{some-things-to-note}{%
+\subsection{Some things to note}\label{some-things-to-note}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  To create additional chapters, create a new /empty .rmd file and save it under your bookdown directory. Use the same numbering structure as the default chapters (i.e.~01,02,03, etc).\\
+  We will learn about advanced numbering and re-ordering chapters later.\\
+\item
+  Use the \texttt{knit} function to render and preview a single chapter.\\
+\item
+  From our output.yml file, you will notice that we have 3 output options for our file; gitbook, pdf and epub. This is the default. You may select the most preferred output type by deleting the other/unwanted formats or leave this as default and choose a single output format when building the book. Since we left the default 3 options, when we rendered the book, it was compiled in .tex/gitbook, pdf and epub. This can be accessed from the `docs' folder.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics{tutorial_screenshots/docs_folder_contents.png}
+\caption{Outputs}
+\end{figure}
+
+4 When building the book. Here you may choose to build one or all formats. From the Build Book button, click on the drop-down arrow and select your preferred format.
+
+\begin{figure}
+\centering
+\includegraphics{tutorial_screenshots/build_book_drop_down.png}
+\caption{Build book format options}
+\end{figure}
+
+\hypertarget{some-troubleshooting}{%
+\section{Some Troubleshooting}\label{some-troubleshooting}}
+
+Creating pdf documents using LaTeX engines and distributions such as TinyTeX is not a straightforward task and may produce errors as the process involves multiple processing activities. However, most errors can be solved using suggestions contained in the error messages produced in the Environment or Console windows.\\
+If, in any case, the LaTeX error generated is not clear, you may use any the commands options below to solve the problem.
+
+\emph{Remove the \# sign to run code}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# remotes::install\_github(\textquotesingle{}yihui/tinytex\textquotesingle{}) \#\# 1 install the development version of tinytex}
+
+\CommentTok{\# update.packages(ask = FALSE, checkBuilt = TRUE) \#3 2 update your r and}
+\CommentTok{\# tinytex::tlmgr\_update() \#\# tinytex packages}
+
+\CommentTok{\# tinytex::reinstall\_tinytex()  \#\# 3 reinstall tinytex}
+
+\CommentTok{\# options(tinytex.verbose = TRUE) \#\# 4 set this option in an r code chunk.This helps provide more info on your problems. Remember to remove it after solving your problem}
+\end{Highlighting}
+\end{Shaded}
+
+See more on \href{https://yihui.org/tinytex/r/}{TinyTex Debugging}.
+
+Additionally, quite often, LaTeX formatting is not very compatible with other output formats such as html. But with the use of \texttt{html\ widgets} and other advanced formatting options, this problem can be overcome.
+To produce a pdf document from a document with both LaTeX and html formats, it may be useful to install the package \texttt{webshot} from CRAN.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install.packages("webshot")  }
+\CommentTok{\# webshot::install\_phantomjs() }
+\end{Highlighting}
+\end{Shaded}
+
+Further reading on \href{https://bookdown.org/yihui/bookdown/html-widgets.html}{html widgets here}
+
+\hypertarget{github-github-pages}{%
+\chapter{GitHub \& GitHub Pages}\label{github-github-pages}}
+
+\hypertarget{sharing-on-github}{%
+\section{Sharing on GitHub}\label{sharing-on-github}}
+
+Github is great for project collaboration, backup and version control.
+To use github as your repository manager;
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create an account at (\url{https://github.com/}).
+\item
+  Create a repository for your files. Click on the plus sign + located at the top right corner of your github account page.
+  \includegraphics{tutorial_screenshots/gh_create_repo.png}
+\item
+  Click on `New Repository' from the drop-down menu.\\
+\item
+  On the new window that appears, give the repository a name: NAPBook\_Tutorial\\
+\item
+  Leave the repository as `Public'
+\item
+  Leave everything else as is\\
+\item
+  Scroll down and click on `Create Repository'\\
+\item
+  On the resulting window, click on `upload an existing file'\\
+  \includegraphics{tutorial_screenshots/gh_uploadfiles.png}
+\end{enumerate}
+
+This will take you to a new window, from which you can drag-\&-drop or browse to your files.
+9. Click on `choose your files'.\\
+10. Navigate with the file explorer to where we saved our `NAPBook\_tutorial' folder in your pc.\\
+11. Select everything within this folder, and click `Open'.\\
+Your files will start loading. Give it a minute or so.\\
+If you scroll through the files you will notice that our `docs' folder is missing. Do not worry!\\
+12. To add the folder, lets use the drag and drop method. From your file explorer, navigate to our NAPBook\_tutorial folder, and click once on the `docs' folder to select it.
+13. Drag and drop this folder into your github repository. The files should start uploading.\\
+14.. After your files finish uploading, scroll down to the `Commit changes' field; here you may enter a short description for your files. Let's enter the text `our first NAP book commit'\\
+When making changes to your files, you may use this field to briefly describe what changes you made, otherwise commonly known as commits.\\
+6. Next, hit the `Commit changes' button at the end. This is called commiting.
+
+\textbf{Congratulation once again!}
+
+To share your repository with colleagues and friends, just copy the link on your browser and share it with them. The link should take a similar identity as below;
+
+\begin{quote}
+\url{https://github.com/yourusername/NAPBook_Tutorial}
+\end{quote}
+
+\hypertarget{publishing-to-github-pages}{%
+\section{Publishing to GitHub pages}\label{publishing-to-github-pages}}
+
+Github pages helps you to create/publish websites in very simple steps.
+We will publish the NAP book we just created with bookdown into a git-based website.
+To do this,
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  From the github repository you created in last step, click on the Settings tab (right side of your screen)\\
+\item
+  Scroll down the listed menu items on the left side of the screen until you find menu item `Pages'. Click on it.\\
+  \includegraphics{tutorial_screenshots/gh_pages_setup.png}
+\item
+  Scroll down to the `Source' field. Click on the drop-down arrow and select the \textbf{main} branch and \textbf{docs} folder as your source files for your website. Click Save.\\
+\item
+  Next, on the `Theme Chooser' field, click to choose a theme for your website.\\
+  A page similar to this appears. \includegraphics{tutorial_screenshots/gh_pages_theme.png}
+\end{enumerate}
+
+You may scroll through to see the options. For this case, lets select the first theme `Cayman'.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Once a theme is selected, a message with a link to your website appears just above your `Source' field.
+\end{enumerate}
+
+\begin{quote}
+Your site is ready to be published at \url{https://yourusername.github.io/repositoryname/}
+\end{quote}
+
+or as seen here \includegraphics{tutorial_screenshots/gh_pageslink.png}
+
+Use this link to view your newly created website.\\
+Alternatively, navigate back to your main repository area, scroll down to your right to find your active `github-pages'. Click to view your website deployments.
+
+\begin{figure}
+\centering
+\includegraphics{tutorial_screenshots/gh_pages_deploy.png}
+\caption{gh pages deployment}
+\end{figure}
+
+\textbf{Now give yourself a pat on the back!}
+
+\hypertarget{suggested-reads}{%
+\chapter{Suggested Reads}\label{suggested-reads}}
+
+Here we include a list of links to articles and other material that might be useful to your journey'
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://bookdown.org/yihui/rmarkdown/}{R mardown basics}
+\item
+  \href{https://bookdown.org/yihui/bookdown/}{Bookdown basics}
+\item
+  \href{https://bookdown.org/yihui/bookdown/github.html}{GitHub for bookdown}
+\end{enumerate}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

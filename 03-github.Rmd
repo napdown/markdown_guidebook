@@ -1,0 +1,61 @@
+# GitHub & GitHub Pages
+## Sharing on GitHub
+Github is great for project collaboration, backup and version control.
+To use github as your repository manager; 
+
+1. Create an account at (https://github.com/). 
+2. Create a repository for your files. Click on the plus sign + located at the top right corner of your github account page. 
+![open github repo](tutorial_screenshots/gh_create_repo.png)
+3. Click on 'New Repository' from the drop-down menu.  
+4. On the new window that appears, give the repository a name: NAPBook_Tutorial  
+5. Leave the repository as 'Public' 
+6. Leave everything else as is   
+7. Scroll down and click on 'Create Repository'  
+8. On the resulting window, click on 'upload an existing file'   
+![import repo to github](tutorial_screenshots/gh_uploadfiles.png)
+
+This will take you to a new window, from which you can drag-&-drop or browse to your files. 
+9. Click on 'choose your files'.  
+10. Navigate with the file explorer to where we saved our 'NAPBook_tutorial' folder in your pc.  
+11. Select everything within this folder, and click 'Open'.  
+Your files will start loading. Give it a minute or so.  
+If you scroll through the files you will notice that our 'docs' folder is missing. Do not worry!  
+12. To add the folder, lets use the drag and drop method. From your file explorer, navigate to our NAPBook_tutorial folder, and click once on the 'docs' folder to select it.
+13. Drag and drop this folder into your github repository. The files should start uploading.   
+14.. After your files finish uploading, scroll down to the 'Commit changes' field; here you may enter a short description for your files. Let's enter the text 'our first NAP book commit'  
+When making changes to your files, you may use this field to briefly describe what changes you made, otherwise commonly known as commits.  
+6. Next, hit the 'Commit changes' button at the end. This is called commiting.  
+
+__Congratulation once again!__   
+
+To share your repository with colleagues and friends, just copy the link on your browser and share it with them. The link should take a similar identity as below;  
+
+> https://github.com/yourusername/NAPBook_Tutorial
+
+## Publishing to GitHub pages
+Github pages helps you to create/publish websites in very simple steps.
+We will publish the NAP book we just created with bookdown into a git-based website.
+To do this,  
+
+1. From the github repository you created in last step, click on the Settings tab (right side of your screen)  
+2. Scroll down the listed menu items on the left side of the screen until you find menu item 'Pages'. Click on it.  
+![gh_pages](tutorial_screenshots/gh_pages_setup.png)
+3. Scroll down to the 'Source' field. Click on the drop-down arrow and select the __main__ branch and __docs__ folder as your source files for your website. Click Save.   
+3. Next, on the 'Theme Chooser' field, click to choose a theme for your website.  
+A page similar to this appears. ![choose theme](tutorial_screenshots/gh_pages_theme.png)  
+
+You may scroll through to see the options. For this case, lets select the first theme 'Cayman'.  
+
+4. Once a theme is selected, a message with a link to your website appears just above your 'Source' field.   
+
+> Your site is ready to be published at https://yourusername.github.io/repositoryname/
+
+or as seen here ![gh pages link](tutorial_screenshots/gh_pageslink.png)  
+
+Use this link to view your newly created website.  
+Alternatively, navigate back to your main repository area, scroll down to your right to find your active 'github-pages'. Click to view your website deployments.  
+
+![gh pages deployment](tutorial_screenshots/gh_pages_deploy.png)  
+
+
+__Now give yourself a pat on the back!__
