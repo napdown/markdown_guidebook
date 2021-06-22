@@ -41,7 +41,7 @@ To do this,
 1. From the github repository you created in last step, click on the Settings tab (right side of your screen)  
 2. Scroll down the listed menu items on the left side of the screen until you find menu item 'Pages'. Click on it.  
 ![gh_pages](tutorial_screenshots/gh_pages_setup.png)
-3. Scroll down to the 'Source' field. Click on the drop-down arrow and select the __main__ branch and __docs__ folder as your source files for your website. Click Save.   
+3. Scroll down to the 'Source' field. Click on the drop-down arrow and select the __main/master__ branch and __docs__ folder as your source files for your website. Click Save.   
 3. Next, on the 'Theme Chooser' field, click to choose a theme for your website.  
 A page similar to this appears. ![choose theme](tutorial_screenshots/gh_pages_theme.png)  
 
