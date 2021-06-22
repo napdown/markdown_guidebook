@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 GitHub &amp; GitHub Pages | An introduction to markdown basics</title>
+  <meta name="description" content="Chapter 4 GitHub &amp; GitHub Pages | An introduction to markdown basics" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 GitHub &amp; GitHub Pages | An introduction to markdown basics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 GitHub &amp; GitHub Pages | An introduction to markdown basics" />
+  
+  
+  
+
+<meta name="author" content="The A Team :)" />
+
+
+<meta name="date" content="2021-06-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bookdown.html"/>
+<link rel="next" href="suggested-reads.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Introduction to Markdown Basics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#opening-a-markdown-file"><i class="fa fa-check"></i><b>1.1</b> Opening a markdown file</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#rstudio-windows-explained"><i class="fa fa-check"></i><b>1.1.1</b> Rstudio windows explained:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-packages"><i class="fa fa-check"></i><b>1.2</b> Installing packages</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#loading-libraries"><i class="fa fa-check"></i><b>1.3</b> Loading Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#about-rmarkdown"><i class="fa fa-check"></i><b>2.1</b> About rmarkdown</a></li>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#editing-in-markdown"><i class="fa fa-check"></i><b>2.2</b> Editing in markdown</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="getting-started.html"><a href="getting-started.html#headers"><i class="fa fa-check"></i><b>2.2.1</b> Headers</a></li>
+<li class="chapter" data-level="2.2.2" data-path="getting-started.html"><a href="getting-started.html#bold-and-italic-text"><i class="fa fa-check"></i><b>2.2.2</b> Bold and italic text</a></li>
+<li class="chapter" data-level="2.2.3" data-path="getting-started.html"><a href="getting-started.html#create-lists"><i class="fa fa-check"></i><b>2.2.3</b> Create Lists</a></li>
+<li class="chapter" data-level="2.2.4" data-path="getting-started.html"><a href="getting-started.html#manual-line-breaks"><i class="fa fa-check"></i><b>2.2.4</b> Manual line breaks</a></li>
+<li class="chapter" data-level="2.2.5" data-path="getting-started.html"><a href="getting-started.html#insert-links"><i class="fa fa-check"></i><b>2.2.5</b> Insert links</a></li>
+<li class="chapter" data-level="2.2.6" data-path="getting-started.html"><a href="getting-started.html#insert-figuresimages"><i class="fa fa-check"></i><b>2.2.6</b> Insert figures/images</a></li>
+<li class="chapter" data-level="2.2.7" data-path="getting-started.html"><a href="getting-started.html#insert-block-quotes"><i class="fa fa-check"></i><b>2.2.7</b> Insert block quotes</a></li>
+<li class="chapter" data-level="2.2.8" data-path="getting-started.html"><a href="getting-started.html#insert-code-chunks"><i class="fa fa-check"></i><b>2.2.8</b> Insert code chunks</a></li>
+<li class="chapter" data-level="2.2.9" data-path="getting-started.html"><a href="getting-started.html#create-tables"><i class="fa fa-check"></i><b>2.2.9</b> Create tables</a></li>
+<li class="chapter" data-level="2.2.10" data-path="getting-started.html"><a href="getting-started.html#page-breaks"><i class="fa fa-check"></i><b>2.2.10</b> Page breaks</a></li>
+<li class="chapter" data-level="2.2.11" data-path="getting-started.html"><a href="getting-started.html#process-a-markdown-document-to-desired-output"><i class="fa fa-check"></i><b>2.2.11</b> Process a markdown document to desired output</a></li>
+<li class="chapter" data-level="2.2.12" data-path="getting-started.html"><a href="getting-started.html#references"><i class="fa fa-check"></i><b>2.2.12</b> References</a></li>
+<li class="chapter" data-level="2.2.13" data-path="getting-started.html"><a href="getting-started.html#pandoc-knitr"><i class="fa fa-check"></i><b>2.2.13</b> Pandoc &amp; Knitr</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>3</b> Bookdown</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="bookdown.html"><a href="bookdown.html#setting-up-an-open-nap-document"><i class="fa fa-check"></i><b>3.1</b> Setting up an Open NAP document</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="bookdown.html"><a href="bookdown.html#some-things-to-note"><i class="fa fa-check"></i><b>3.1.1</b> Some things to note</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="bookdown.html"><a href="bookdown.html#some-troubleshooting"><i class="fa fa-check"></i><b>3.2</b> Some Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="github-github-pages.html"><a href="github-github-pages.html"><i class="fa fa-check"></i><b>4</b> GitHub &amp; GitHub Pages</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="github-github-pages.html"><a href="github-github-pages.html#sharing-on-github"><i class="fa fa-check"></i><b>4.1</b> Sharing on GitHub</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="github-github-pages.html"><a href="github-github-pages.html#via-direct-file-upload"><i class="fa fa-check"></i><b>4.1.1</b> Via direct file upload</a></li>
+<li class="chapter" data-level="4.1.2" data-path="github-github-pages.html"><a href="github-github-pages.html#via-git-bash"><i class="fa fa-check"></i><b>4.1.2</b> Via Git Bash</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="github-github-pages.html"><a href="github-github-pages.html#publishing-to-github-pages"><i class="fa fa-check"></i><b>4.2</b> Publishing to GitHub pages</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="suggested-reads.html"><a href="suggested-reads.html"><i class="fa fa-check"></i><b>5</b> Suggested Reads</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An introduction to markdown basics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="github-github-pages" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> GitHub &amp; GitHub Pages</h1>
+<div id="sharing-on-github" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Sharing on GitHub</h2>
+<div id="via-direct-file-upload" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Via direct file upload</h3>
+<p>Github is great for project collaboration, backup and version control.
+To use github as your repository manager;</p>
+<ol style="list-style-type: decimal">
+<li>Create an account at (<a href="https://github.com/" class="uri">https://github.com/</a>).</li>
+<li>Create a repository for your files. Click on the plus sign + located at the top right corner of your github account page.
+<img src="tutorial_screenshots/gh_create_repo.png" alt="open github repo" /></li>
+<li>Click on ‘New Repository’ from the drop-down menu.<br />
+</li>
+<li>On the new window that appears, give the repository a name: NAPBook_Tutorial<br />
+</li>
+<li>Leave the repository as ‘Public’</li>
+<li>Leave everything else as is<br />
+</li>
+<li>Scroll down and click on ‘Create Repository’<br />
+</li>
+<li>On the resulting window, click on ‘upload an existing file’<br />
+<img src="tutorial_screenshots/gh_uploadfiles.png" alt="import repo to github" /></li>
+</ol>
+<p>This will take you to a new window, from which you can drag-&amp;-drop or browse to your files.</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Click on ‘choose your files.’<br />
+</li>
+<li>Navigate with the file explorer to where we saved our ‘NAPBook_tutorial’ folder in your pc.<br />
+</li>
+<li>Select everything within this folder, and click ‘Open.’<br />
+Your files will start loading. Give it a minute or so.<br />
+If you scroll through the files you will notice that our ‘docs’ folder is missing. Do not worry!<br />
+</li>
+<li>To add the folder, lets use the drag and drop method. From your file explorer, navigate to our NAPBook_tutorial folder, and click once on the ‘docs’ folder to select it.</li>
+<li>Drag and drop this folder into your github repository. The files should start uploading.<br />
+14.. After your files finish uploading, scroll down to the ‘Commit changes’ field; here you may enter a short description for your files. Let’s enter the text ‘our first NAP book commit’<br />
+When making changes to your files, you may use this field to briefly describe what changes you made, otherwise commonly known as commits.<br />
+</li>
+<li>Next, hit the ‘Commit changes’ button at the end. This is called commiting.</li>
+</ol>
+</div>
+<div id="via-git-bash" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Via Git Bash</h3>
+<ol style="list-style-type: decimal">
+<li>Download and install Git Bash from this link (<a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a>).<br />
+</li>
+<li>Repeat steps 1 - 7 in the preceding section.<br />
+</li>
+<li>On the new window, click on the ‘https’ tab to reveal the url for your repository.
+<img src="tutorial_screenshots/gh_repolink.png" alt="Repository url" /></li>
+<li>Luanch Git Bash on your pc. This opens up a window with your pc name in the text. This is the command window.<br />
+</li>
+<li>Set the working repository to where your project files are located. To do this, type in commamd <code>cd "path to your project files directory</code>. Click Enter on your keyboard.<br />
+</li>
+<li>Type in <code>git init</code> to initialize this directory as your file origin.<br />
+</li>
+<li>Type in <code>git remote add origin</code> the paste the https link from step 4. Click Enter.<br />
+</li>
+<li>Type in <code>git add .</code> to add all project files in your pc to your github repository.<br />
+</li>
+<li>To add only specific file, type in <code>git add .insert name of file</code><br />
+</li>
+<li>Type in <code>git commit -m</code>, open quotation marks and insert a commit message. Click Enter.<br />
+</li>
+<li>Type in <code>git push origin master</code> and click Enter. This pushes/uploads your files plus the commit message to your github repo.
+Below is a list of the above commands<br />
+<img src="tutorial_screenshots/gh_bash_upload.png" alt="Upload files via git bash" /></li>
+</ol>
+<p><strong>Congratulation once again!</strong></p>
+<p>To share your repository with colleagues and friends, just copy the link on your browser and share it with them. The link should take a similar identity as below;</p>
+<blockquote>
+<p><a href="https://github.com/yourusername/NAPBook_Tutorial" class="uri">https://github.com/yourusername/NAPBook_Tutorial</a></p>
+</blockquote>
+</div>
+</div>
+<div id="publishing-to-github-pages" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Publishing to GitHub pages</h2>
+<p>Github pages helps you to create/publish websites in very simple steps.
+We will publish the NAP book we just created with bookdown into a git-based website.
+To do this,</p>
+<ol style="list-style-type: decimal">
+<li>From the github repository you created in last step, click on the Settings tab (right side of your screen)<br />
+</li>
+<li>Scroll down the listed menu items on the left side of the screen until you find menu item ‘Pages.’ Click on it.<br />
+<img src="tutorial_screenshots/gh_pages_setup.png" alt="gh_pages" /></li>
+<li>Scroll down to the ‘Source’ field. Click on the drop-down arrow and select the <strong>main</strong> branch and <strong>docs</strong> folder as your source files for your website. Click Save.<br />
+</li>
+<li>Next, on the ‘Theme Chooser’ field, click to choose a theme for your website.<br />
+A page similar to this appears. <img src="tutorial_screenshots/gh_pages_theme.png" alt="choose theme" /></li>
+</ol>
+<p>You may scroll through to see the options. For this case, lets select the first theme ‘Cayman.’</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Once a theme is selected, a message with a link to your website appears just above your ‘Source’ field.</li>
+</ol>
+<blockquote>
+<p>Your site is ready to be published at <a href="https://yourusername.github.io/repositoryname/" class="uri">https://yourusername.github.io/repositoryname/</a></p>
+</blockquote>
+<p>or as seen here <img src="tutorial_screenshots/gh_pageslink.png" alt="gh pages link" /></p>
+<p>Use this link to view your newly created website.<br />
+Alternatively, navigate back to your main repository area, scroll down to your right to find your active ‘github-pages.’ Click to view your website deployments.</p>
+<div class="figure">
+<img src="tutorial_screenshots/gh_pages_deploy.png" alt="" />
+<p class="caption">gh pages deployment</p>
+</div>
+<p><strong>Now give yourself a pat on the back!</strong></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bookdown.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="suggested-reads.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["markdown_guidebook.pdf", "markdown_guidebook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

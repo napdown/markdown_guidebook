@@ -1,0 +1,553 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={An introduction to markdown basics},
+  pdfauthor={Yihui Xie},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{An introduction to markdown basics}
+\author{Yihui Xie}
+\date{2021-06-09}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{prerequisites}{%
+\chapter{Prerequisites}\label{prerequisites}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  You have installed R (\url{https://www.r-project.org/})
+\item
+  You have installed RStudio (\url{https://www.rstudio.com/products/rstudio/download/})
+\end{enumerate}
+
+\hypertarget{opening-a-markdown-file}{%
+\section{Opening a markdown file}\label{opening-a-markdown-file}}
+
+\textbf{Steps;}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Launch your r/studio app.\\
+\item
+  Install rmarkdown package, use command \texttt{install.packages("rmarkdown")}\\
+\item
+  If you intend to create .pdf documents install TinyTeX, use command \texttt{install.packages("tinytex")}
+\end{enumerate}
+
+\hypertarget{installing-packages}{%
+\section{Installing packages}\label{installing-packages}}
+
+In markdown, packages are installed within a code chunk, i.e, between \texttt{\{r\}\ \ \ and}.\\
+To install a package, use command `install.packages(``name of package'')`.\\
+Alternatively, from the menu bar, go the the tab 'Tools' and select `Install Packages'.\\
+In the `Install from' field, select `Repository (CRAN)', then enter the name(s) of packages to be installed, and leave the `Install to Library' field as default.
+
+\textbf{Note:} \emph{Packages can only be installed once. To mean, if you close your r/rstudio app and come back to it the next day/session, you do not need to install the packages you already installed in your previous session. You will only need to load their libraries (see next section)}
+
+\hypertarget{loading-libraries}{%
+\section{Loading Libraries}\label{loading-libraries}}
+
+To be able to make use of the packages installed, you need to call their libraries. Most libraries take the name of the package. For instance, for the package \texttt{rmakdown}, the respective library is \texttt{rmarkdown}.\\
+To call the library, use command \texttt{library(rmarkdown)}.
+So in general to load/call libraries use command \texttt{library(name\ of\ libarary)}.\\
+\textbf{Note:} \emph{Unlike packages,library functions expire when you close a project or end a session. Therefore, each time you open an r session, you have to load/call relevant libraries}
+
+\hypertarget{getting-started}{%
+\chapter{Getting started}\label{getting-started}}
+
+\hypertarget{about-rmarkdown}{%
+\section{About rmarkdown}\label{about-rmarkdown}}
+
+R markdown is a file document that allows you to write, save and execute code, as well as text and figures to help generate reproducible reports that can be shared in several formats.
+The file extension is .rmd.\\
+A markdown file has three main sections;
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{YAML header}
+  This is where your document metadata go to e.g your document title, author, date, output file type etc.
+  This parameters are set when opening a new .rmd file. And more can be set after.
+  This section MUST always be at the beginning of your document and between a set of three dashes i.e three dashes before section and three dashes after section.
+\item
+  \textbf{Text}
+  Your narration/prose in markdown format. More details about formatting in subsequent sections.
+\item
+  \textbf{Code chunk(s)}\\
+  They start with ```\{r\}
+
+  and end end with ```
+\end{enumerate}
+
+To create headers for your reports/document e.g.~chapters, sub-chapters and so on; use the hash sign'\#' in front of the title. Sequentially increase the number of "\#' signs to denote subsequent header levels.\\
+Insert blank line before each header (except in the beginning of document).
+
+\hypertarget{editing-in-markdown}{%
+\section{Editing in markdown}\label{editing-in-markdown}}
+
+\hypertarget{bold-and-italic-text}{%
+\subsection{Bold and italic text}\label{bold-and-italic-text}}
+
+To create emphasis in your markdown texts, use an asterisk before and after text \emph{to italicize} or double asterisk \textbf{to make your text bold}.\\
+Alternatively, you may use single underscore \emph{for italics} or double underscore \textbf{for bold}.
+
+\hypertarget{create-lists}{%
+\subsection{Create Lists}\label{create-lists}}
+
+\hypertarget{ordered-list}{%
+\subsubsection{Ordered list}\label{ordered-list}}
+
+Use numbers to order your list items.
+and a plus sign `+' to create sub-items on your list.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  List item 1\\
+\item
+  List item 2\\
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Sub-item 1\\
+\item
+  Sub-item 2\\
+\item
+  Sub-item 3\\
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  List item 3
+\end{enumerate}
+
+\hypertarget{unordered-list}{%
+\subsubsection{Unordered list}\label{unordered-list}}
+
+Use an asterisk '*' before list item to create an unordered list.\\
+Use a plus `+' sign for sub-items.\\
+Use tab command or two spaces on your keyboard to indent the list items
+
+\begin{itemize}
+\tightlist
+\item
+  List item
+\item
+  List item
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sub-item
+  \item
+    Sub-item
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Sub-sub item
+    \end{itemize}
+  \end{itemize}
+\item
+  List item
+\end{itemize}
+
+\hypertarget{manual-line-breaks}{%
+\subsection{Manual line breaks}\label{manual-line-breaks}}
+
+Use two or more spaces at the end of a line\\
+to insert a line break
+
+\hypertarget{insert-links}{%
+\subsection{Insert links}\label{insert-links}}
+
+You may insert a link using the plain http address such as \url{https://rmarkdown.rstudio.com/} or insert it as a linked phrase using square brackets and parenthesis such as \href{https://rmarkdown.rstudio.com/}{our link phrase goes here}.
+
+\hypertarget{insert-figuresimages}{%
+\subsection{Insert figures/images}\label{insert-figuresimages}}
+
+To insert images to our document, we use the same syntax as links, but start with an exclamation mark'!' before syntax.
+For an image from a url use; \texttt{!{[}text\ to\ accompany\ your\ image\ e.g\ a\ caption{]}(your\ https\ link)}\\
+or for an image file in your local directory use, \texttt{{[}your\ image\ text{]}(path\ to\ local\ image\ file)}.\\
+For instance, I downloaded the UN Climate logo and saved it as a .jpg in my working directory as exact name \texttt{unfccc\_logo.jpg}
+The following syntax will insert the logo into my document:
+\texttt{!{[}UN\ Climate\ logo{]}(unfccc\_logo.jpg)}. However, this draws the logo on entire page width. Therefore to specify the drawing width of the image we add the the command '\{width=xin\}` at the end. \includegraphics[width=1in,height=\textheight]{unfccc_logo.jpg}
+
+\textbf{When inserting images from local file, it is strongly recommended to have the file in your working directory.}
+
+\hypertarget{insert-block-quotes}{%
+\subsection{Insert block quotes}\label{insert-block-quotes}}
+
+To insert a block quote within your text, use the greater than sign `\textgreater{}' in the beginning of quote. For instance;
+
+\begin{quote}
+This exercise may seem complicated at first,
+but trust me, it is not. You will agree with me sooner than later :)
+\end{quote}
+
+\hypertarget{insert-code-chunks}{%
+\subsection{Insert code chunks}\label{insert-code-chunks}}
+
+To write your code use open code chunk with three backticks
+and the curly brackets \{insert your code language\}, hit enter on your keyboard, insert your code and hit enter, close the code chunk with another three backticks.\\
+For code in r language;
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# your code here}
+\end{Highlighting}
+\end{Shaded}
+
+For code in python;
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# your code here}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{create-tables}{%
+\subsection{Create tables}\label{create-tables}}
+
+\hypertarget{option-1}{%
+\subsubsection{Option 1}\label{option-1}}
+
+Create table headers with dashed lines below the header title. Separate headers with tab or space between the headers and corresponding dashed lines.\\
+Type in row values below the dashed lines. The row value length may exceed the dashed line length but MUST not extend into the next header's dashed line.\\
+\textbf{Column alignment is based on the position of the header/column title relative to the dashed line below it.}\\
+To insert a caption or alt text to your table use, full colon `:' followed by your caption text at the end of the table.
+
+\begin{longtable}[]{@{}lrcl@{}}
+\caption{you may insert table caption here\\
+Table: Alternative caption option}\tabularnewline
+\toprule
+Header 1 & Header 2 & Header 3 & Header 4 \\
+\midrule
+\endfirsthead
+\toprule
+Header 1 & Header 2 & Header 3 & Header 4 \\
+\midrule
+\endhead
+12343 & 895 & 0.5867891011 & 1 \\
+Name & Rank & score & remark \\
+Type & 3 & TRUE & 12.1 \\
+Left align & Right align & Center & Default \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{option-2}{%
+\subsubsection{Option 2}\label{option-2}}
+
+You may also create simple tables using a \texttt{knitr} function called \texttt{kable}.\\
+The code below tells r that we want to create a data set with 3 columns, X, Y \& Z, assigning them the values enclosed in the letter c.~The letter c used together with brackets indicates a list of elements. Thus, in the example below, we tell r that our column X, will contain a list of 4 elements i.e 20, 30, 10 \& 50.\\
+Then we tell r to create the data set by combining all the columns X, Y \& Z into a data frame.
+Finally, we call the function \texttt{kable} and enter the data we created. This function converts or data frame into a table format.\\
+Optionally, you may add a caption to the table and specify cell alignment.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{X}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{20}\NormalTok{,}\DecValTok{30}\NormalTok{,}\DecValTok{10}\NormalTok{, }\DecValTok{50}\NormalTok{)    }\CommentTok{\# create variable X}
+\NormalTok{Y}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\FloatTok{1.4}\NormalTok{, }\FloatTok{4.3}\NormalTok{,}\FloatTok{5.9}\NormalTok{,}\FloatTok{2.7}\NormalTok{)    }\CommentTok{\# create variable Y}
+\NormalTok{Z}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"yes"}\NormalTok{,}\StringTok{"no"}\NormalTok{,}\StringTok{"true"}\NormalTok{,}\StringTok{"false"}\NormalTok{)   }\CommentTok{\# create variable Z}
+\NormalTok{mydata}\OtherTok{\textless{}{-}}\FunctionTok{data.frame}\NormalTok{(X,Y,Z) }\CommentTok{\# combine variables into table format}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(mydata, }\AttributeTok{caption =} \StringTok{"My first simple table with kable"}\NormalTok{, }\AttributeTok{align =} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{) }\CommentTok{\# plot table with kable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-3}My first simple table with kable}
+\centering
+\begin{tabular}[t]{c|c|c}
+\hline
+X & Y & Z\\
+\hline
+20 & 1.4 & yes\\
+\hline
+30 & 4.3 & no\\
+\hline
+10 & 5.9 & true\\
+\hline
+50 & 2.7 & false\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{page-breaks}{%
+\subsection{Page breaks}\label{page-breaks}}
+
+Use three or more asterisks or dashes to insert a page break.\\
+\emph{Remember to add a blank line before the asterisks or dashes}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{process-a-markdown-document-to-desired-output}{%
+\subsection{Process a markdown document to desired output}\label{process-a-markdown-document-to-desired-output}}
+
+To create the desired output file document from the markdown format, use the function \texttt{render\ ("your\ .rmd\ file\ name)}.\\
+Alternatively,and most commonly used, is the \texttt{Knit} button from the markdown script environment. The button is a blue ball of yarn around a crotchet, and is labeled `Knit'
+When a document is rendered, rmarkdown saves the results/output file into your working directory, giving it the same name as your .rmd file, but with relevant extension (e.g.~as html if output type was set to html)
+
+\hypertarget{references}{%
+\subsection{References}\label{references}}
+
+To do later
+
+\hypertarget{pandoc-knitr}{%
+\subsection{Pandoc \& Knitr}\label{pandoc-knitr}}
+
+\texttt{Pandoc} is a universal document converter designed to convert thousands of markup languages. So when we create our document in mrakdown and wan to output it as a pdf, pandoc does the work.\\
+\texttt{Knitr} on the other hand, is an r package that enables the integration of yaml, text and code evaluations into an output document. \texttt{Knitr} contains the \texttt{Knit} function through which we render our rmarkdown documents to our desired output format.
+When you render a document in rmarkdoen (or call the knit function), the r markdoen document is converted to a basic markdown language (.md) which is then converted by pandoc to say html, pdf, word, etc as per user specifications.
+\texttt{Knitr} and \texttt{pandoc} come in bundled with rmakrdown, and thus, there is no need to install them separately.\\
+However, should you need to install pandoc as standalone, you may do so from the \href{http://pandoc.org}{Pandoc homepage}. In this regard, it is important to note that in as much as standalone installations may provide much higher versions of the software than what is already bundled in r, they are often not streamlined for use in r, and may thus cause some compatibility issues.
+
+\hypertarget{bookdown}{%
+\chapter{Bookdown}\label{bookdown}}
+
+\hypertarget{how-to-set-up-an-open-nap-document}{%
+\section{How to set up an Open NAP document}\label{how-to-set-up-an-open-nap-document}}
+
+We will use the package `bookdown' to generate NAP document in a book format. Journal articles or reports can be produced in the same way.\\
+1. First, we install the bookdown package, use command \texttt{install.packages("bookdown")}.
+2. Then from the menu bar go to \texttt{File\textgreater{}\textgreater{}New\ Project\textgreater{}\textgreater{}New\ Directory\textgreater{}\textgreater{}Book\ Project\ using\ bookdown}. Give your bookdown directory a name and click `create project'.\\
+3. A new project session opens up, with skeleton chapters and other sections and metadata files. Each chapter is compiled from a single .rmd file. From the files pane, you can open any chapter, and edit it to your liking.\\
+4. To add additional chapters, create a new .rmd file and save it under your bookdown directory. Use the same numbering structure as the default chapters (i.e.~01,02,03, etc).\\
+We will learn about advanced numbering and re-ordering chapters later.
+5. Use the \texttt{knit} function to render and preview a single chapter.
+6. From our output.yml file, you will notice that we have 3 output options for our file; gitbook, pdf and epub. This is the default. You may select the most preferred output type by deleting the other/unwanted formats or leave this as default and choose a single output format when building the book. I recommend to leave the default 3 options
+7. From the menu bar click on the `Build' tab to compile your book.
+8. Here you may choose to build one or all formats.\\
+9. For the purpose of publishing our NAP to github pages later, we will need to create an extra docs folder in our bookdown project files.
+10. To do so, navigate to and open the `bookdown.yml' file and add the line\\
+\texttt{output\_dir:\ "docs"}~\\
+Remember to keep saving your project.
+
+\hypertarget{important-to-note}{%
+\section{Important to note}\label{important-to-note}}
+
+Creating pdf documents using LaTeX engines and distributions such as TinyTeX is not a straightforward task and may produce errors as the process involves multiple processing activities. However, most error can be solved using suggestions contained in the error messages produced.\\
+If, in any case, the LaTeX error generated is not clear, check out options provided here for \href{https://yihui.org/tinytex/r/}{TinyTex Debugging}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# remotes::install\_github(\textquotesingle{}yihui/tinytex\textquotesingle{}) \#\# 1 install the development version of tinytex}
+
+\CommentTok{\# update.packages(ask = FALSE, checkBuilt = TRUE) \#3 2 update your r and}
+\CommentTok{\# tinytex::tlmgr\_update() \#\# tinytex packages}
+
+\CommentTok{\# tinytex::reinstall\_tinytex()  \#\# 3 reinstall tinytex}
+
+\CommentTok{\# options(tinytex.verbose = TRUE) \#\# 4 set this option in an r code chunk.This helps provide more info on your problems. Remember to remove it after solving your problem}
+\end{Highlighting}
+\end{Shaded}
+
+Additionally, quite often, LaTeX formatting is not very compatible with other output formats such as html. But with the use of \texttt{html\ widgets} and other advanced formatting options, this problem can be overcome.
+To produce a pdf document from a document with both LaTeX and html formats, it may be useful to install the package \texttt{webshot} from CRAN.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install.packages("webshot")  }
+\CommentTok{\# webshot::install\_phantomjs() }
+\end{Highlighting}
+\end{Shaded}
+
+Further reading on \href{https://bookdown.org/yihui/bookdown/html-widgets.html}{html widgets here}
+
+\hypertarget{github-github-pages}{%
+\chapter{GitHub \& GitHub Pages}\label{github-github-pages}}
+
+\hypertarget{sharing-on-github}{%
+\section{Sharing on GitHub}\label{sharing-on-github}}
+
+Github is great for project collaboration, backup and version control.
+To use github as your repository manager;
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create an account at (\url{https://github.com/}).
+\item
+  Create a repository for your files
+\item
+  On the new repository, click on the `Add File' drop-down menu, select `Upload files'.\\
+\item
+  This will take you to a new window, from which you can drag-\&-drop or browse to your files.
+\item
+  After your files finish uploading, scroll down to the `Commit changes' field; here you may enter a short description for your files. When making changes to your files, you may use this field to briefly describe what changes you made. This is commonly known as committing.\\
+\item
+  When done, hit the `Commit changes' button at the end.
+\end{enumerate}
+
+\hypertarget{publishing-to-github-pages}{%
+\section{Publishing to GitHub pages}\label{publishing-to-github-pages}}
+
+Github pages helps you to create/publish websites in very simple steps.
+We will publish our book/NAP document we just created with bookdown into a git-based website.
+To do this,
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  From the github repository you created in last step, click on the Settings tab (right side of your screen)\\
+\item
+  Scroll down the listed menu items on the left side of the screen until you find menu item `Pages'. Click on it
+\item
+  Scroll down to the `Source' field. Here, select the \textbf{main} branch and \textbf{docs} folder as your source files for your website. Click Save.\\
+\item
+  Next, choose a theme for your website.\\
+\item
+  Once a theme is selected, a message with a link to your website appears just above your `Source' field.\\
+  \textgreater{} Your site is ready to be published at \url{https://yourusername.github.io/repositoryname/}
+\end{enumerate}
+
+Use this link to view your newly created website.\\
+Alternatively, navigate back to your main repository area, scroll down to your right to find your active `github-pages'. Click to view your website deployments
+
+\hypertarget{suggested-reads}{%
+\chapter{Suggested Reads}\label{suggested-reads}}
+
+Here we include a list of links to articles and other material that might be useful to your journey'
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://bookdown.org/yihui/rmarkdown/}{R mardown basics}
+\item
+  \href{https://bookdown.org/yihui/bookdown/}{Bookdown basics}
+\item
+  \href{https://bookdown.org/yihui/bookdown/github.html}{GitHub for bookdown}
+\end{enumerate}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

@@ -1,0 +1,84 @@
+--- 
+title: "An introduction to markdown basics"
+author: "The A Team :)"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+
+---
+# Prerequisites
+
+1. You have installed R (https://www.r-project.org/)
+2. You have installed RStudio (https://www.rstudio.com/products/rstudio/download/)
+
+## Opening a markdown file
+
+1. Launch your r/studio app. 
+Your rstudio workspace should look more or less similar to this: ![rstudio_window panels](tutorial_screenshots/rstudio_panels.png) 
+
+If your rstudio opens up with 4 windows instead of 3, skip next step.  
+2. From the main menu, go to File->>New File->>R Markdown. 
+You shoukd have a window like this: ![opening a new .rmd file](tutorial_screenshots/open_rmd_file.png)
+
+3. Fill in the details for your document title and author. Leave the rest as default.  
+4. Click Ok  
+
+This opens up your 4th rstudio window with an rmarkdown script.  
+Now your app area should look more or less like this; ![The four r windows](tutorial_screenshots/rstudio_panels_4.png)  
+The arrangement may however be different. If so, do not worry, it's just semantics.  
+_As you might have seen, you may open other scripts such as R, python, SQL etc in similar manner._
+
+### Rstudio windows explained:   
+* **The Source**  
+This is your scripting area.   
+You may write, edit and run your code from here.  
+
+* **The Console**   
+All processing in r happens here. You may this is the r kitchen.
+When you run your code, this is where it is evaluated.  
+You may also use the console to write and execute your code. However, you can not save your code, nor can you edit it (you will have to rewrite it). Thus, it is always advisable to write your code in the script/source area.  
+* **The Environment**  
+This panel holds your data objects and their metadata. As you create or add new objects into your project, they will appear in this window. You may view and remove objects.
+It also contains the 'History' tab from which you may view all your r processing history.  
+* **The Files/Plots/Packages/Help Panel**  
+This panel provides a shortcut/alternative to different functions such as to access your project files, to view plots from your code evaluations, install packages and access the Help resource. You may add/remove items here but we will learn that much later. For now we leave it as is.
+
+  
+## Installing packages
+Options:
+
+1. From the console;  
+After the greater than (>) sign, write command `install.packages("package name")` and hit enter on your keyboard.  
+See example;  
+![install packages from console](tutorial_screenshots/install_rmkdn_consl.png)     
+2. In script window  
+Inside your script write command `install.packages("package name")`   
+Click on 'Run' (Run button is on the top right of your source panel).   
+Alternatively, if your write your command in a code chunk, you may hit the 'Play' button on far right of your code chunk. See example;  
+![install packages from script wnindow](tutorial_screenshots/install_rmkdn_scrpt.png)  
+
+We see more about code chunks in the next chapter.  
+3. From the menu bar  
+From the menu bar, go the the tab 'Tools' and select 'Install Packages'.  
+
+You should see a window like this one ![install packages from menu bar](tutorial_screenshots/install_rmkdn_toolstab.png)  
+
+In the 'Install from' field, select 'Repository (CRAN)', then enter the name(s) of packages to be installed.  
+Leave everything else as default. Click Install.  
+4. From Files/Plots/Packages/Help Panel  
+Click on the 'Packages' tab. There are 2 tabs under this, Install & Update.  
+Click on Install.  
+If the 'Install from' is not set to 'Repository (CRAN)', set it so, and enter name(s) of packages to be installed.  
+Leave everything else as default. Click Install.
+
+__Note:__ _Packages can only be installed once. To mean, if you close your r/rstudio app and come back to it the next day/session, you do not need to install the packages you already installed in your previous session. You will only need to load their libraries (see next section)_
+
+## Loading Libraries
+To be able to make use of the packages installed, you need to call their libraries. Most libraries take the name of the package. For instance, for the package `rmakdown`, the respective library is `rmarkdown`.To call the  rmarkdown library, use command `library(rmarkdown)`.
+So in general to load/call libraries use command `library(name of library)`.  
+You may load libraries in the console or in your script.
+
+__Note:__ _Unlike packages,library functions expire when you close a project or end a session. Therefore, each time you open an r session, you have to load/call relevant libraries_

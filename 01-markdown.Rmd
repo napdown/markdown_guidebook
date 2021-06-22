@@ -1,0 +1,190 @@
+# Getting started 
+## About rmarkdown
+R markdown is a file document that allows you to write, save and execute code, as well as text and figures to help generate reproducible reports that can be shared in several formats. 
+The file extension is .rmd.  
+A markdown file has three main sections;  
+
+1. __YAML header__  
+  This is where your document metadata go to e.g your document title, author, date, output file type etc.
+  This parameters are set when opening a new .rmd file. And more can be set after.
+  This section MUST always be at the beginning of your document and between a set of three dashes i.e three dashes before section and three dashes after section.
+2. __Text__  
+  Your narration/prose in markdown format. More details about formatting in subsequent sections.
+3. __Code chunk(s)__     
+  They start with ```{r} 
+
+   and end with ```
+    
+
+## Editing in markdown
+### Headers 
+To create headers for your reports/document e.g. chapters, sub-chapters and so on; use the hash sign '#' in front of the title. Sequentially increase the number of "#' signs to denote subsequent header levels.  
+Insert blank line before each header (except in the beginning of document).
+
+ # Header level 1   
+ ## Header level 2  
+ ### Header level 3  
+ #### Header level 4  
+
+_Note: For the purpose of this example, I have added a space before each line so that r doesn't create the headers. Remove the space to create the headers_
+
+
+### Bold and italic text
+To create emphasis in your markdown texts, use an asterisk before and after text *to italicize* or double asterisk **to make your text bold**.  
+Alternatively, you may use single underscore _for italics_ or double underscore __for bold__.
+
+### Create Lists
+#### Ordered list
+Use numbers to order your list items.
+and a plus sign '+' to create sub-items on your list. 
+
+1. List item 1  
+2. List item 2  
+  + Sub-item 1  
+  + Sub-item 2  
++ Sub-item 3  
+3. List item 3  
+
+#### Unordered list
+Use an asterisk '*' before list item to create an unordered list.  
+Use a plus '+' sign for sub-items.  
+Use tab command or two spaces on your keyboard to indent the list items
+
+* List item
+* List item
+    + Sub-item
+    + Sub-item
+        + Sub-sub item
+* List item
+
+### Manual line breaks
+Use two or more spaces at the end of a line    
+to insert a line break
+
+### Insert links
+You may insert a link using the plain http address such as https://rmarkdown.rstudio.com/ or insert it as a linked phrase using square brackets and parenthesis such as [our link phrase goes here](https://rmarkdown.rstudio.com/).
+
+### Insert figures/images
+To insert images to our document, we use the same syntax as links, but start with an exclamation mark'!' before syntax.
+For an image from a url use; `![text to accompany your image e.g a caption](your https link)`  
+or for an image file in your local directory use, `[your image text](path to local image file)`.  
+For instance, I downloaded the UN Climate logo and saved it as a .jpg in my working directory as exact name `unfccc_logo.jpg` 
+The following syntax will insert the logo into my document: 
+`![UN Climate logo](unfccc_logo.jpg)`. However, this draws the logo on entire page width. Therefore to specify the  drawing width of the image  to x inches, we add the the command '{width=xin}` at the end. ![UN Climate logo](unfccc_logo.jpg){width=1in}   
+
+__When inserting images from local file, it is strongly recommended to have the file in your working directory.__
+
+### Insert block quotes
+To insert a block quote within your text, use the greater than sign '>' in the beginning of quote. The quote must begin on a new line, and remember to insert blank line before and after. For instance;
+
+> This exercise may seem complicated at first,
+> but trust me, it is not. You will agree with me sooner than later :)
+
+### Insert code chunks
+To write your code use  open code chunk with three backticks 
+and the curly brackets {insert your code language}, hit enter on your keyboard, insert your code and hit enter, close the code chunk with another three backticks.  
+For code in r language;
+
+```{r}
+# your code here
+```
+
+For code in python;
+
+```{python}
+# your code here
+```
+
+### Create tables
+#### Option 1
+Create table headers with dashed lines below the header title. Separate headers with tab or space between the headers and corresponding dashed lines.   
+Type in row values below the dashed lines. The row value length may exceed the dashed line length but MUST not extend into the next header's dashed line.  
+**Column alignment is based on the position of the header/column title relative to the dashed line below it.**   
+To insert a caption or alt text to your table use, full colon ':' followed by your caption text at the end of the table.  
+Alternatively, use 'Table: your caption or text'.
+
+
+  Header 1    Header 2    Header 3       Header 4
+  ---------  ---------   ----------      --------
+  12343       895        0.5867891011    1
+  Name        Rank       score           remark
+  Type        3          TRUE            12.1
+  Left align  Right align Center         Default
+
+: you may insert table caption here  
+Table: Alternative caption option
+
+#### Option 2
+You may also create simple tables using a `knitr` function called `kable`.  
+The code below tells r that we want to create a data set with 3 columns, X, Y & Z, assigning them the values enclosed in the letter c. The letter c used together with brackets indicates a list of elements. Thus, in the example below, we tell r that our column X, will contain a list of 4 elements i.e 20, 30, 10 & 50.  
+Then we tell r to create the data set by combining all the columns X, Y & Z into a data frame.
+Finally, we call the function `kable` and enter the data we created. This function converts or data frame into a table format.  
+Optionally, you may add a caption to the table and specify cell alignment.  
+
+```{r kable, fig.cap= "My first simple table with kable"}
+X<-c(20,30,10, 50)    # create variable X
+Y<-c(1.4, 4.3,5.9,2.7)    # create variable Y
+Z<-c("yes","no","true","false")   # create variable Z
+mydata<-data.frame(X,Y,Z) # combine variables into table format
+knitr::kable(mydata, caption = "My first simple table with kable", align = 'c') # plot table with kable
+```
+
+__Note that our code chunk is labelled 'kable'. You can label code chunks as in the brackets below__
+
+
+(open chunk ```{r your chunk name}  
+
+your code  
+
+  close code chunk with ```)   
+
+This will be useful for cross-referencing.  
+
+### Page breaks
+Use three or more asterisks or dashes to insert a page break.   
+_Remember to add a blank line before the asterisks or dashes_
+
+----
+
+### Process a markdown document to desired output
+To create the desired output file document from the markdown format, use the function `render ("your .rmd file name)`.  
+Alternatively,and most commonly used, is the `Knit` button from the markdown script environment. The button is a blue ball of yarn around a crotchet, and is labeled 'Knit'
+When a document is rendered, rmarkdown saves the results/output file into your working directory, giving it the same name as your .rmd file, but with relevant extension (e.g. as html if output type was set to html) 
+
+
+### References
+#### Citations/Bibliography
+To add citations to our document, we need to add our reference document details to a text file saved in the .bib format e.g myrefences.bib. We also need to add this file to our bibliography parameter in the yaml section of the index.rmd file.  
+The references for this exercise are saved in the file 'book.bib'.   
+To add your reference documents to the .bib file, use the BibTeX citation style i.e  
+
+> @documentype{documentname,  
+  title={document title},  
+  author={author name(s)},  
+  year={publication year},  
+  publisher={publisher name},  
+  url={document url}  
+}  
+
+Sites such as [Google Scholar](https://scholar.google.com/) have ready to use/ formatted bibliography styles such as BibTeX, EndNote etc. You may copy-paste the BibTeX text into your .bib file in r.
+
+You may have as many documents listed in the .bib file but rmarkdown will only include those that have been referenced within your markdown document.  
+To reference documents in your narrative and thus, have them included in the reference section, use the format `[@documentname]`.     
+For instance, [@xie2015] and [@team2013r]  are the only references in my book.bib file.  
+The references will appear at the end of the chapter where they are referenced, as well as in the overall 'References' section.
+
+#### Chapter References
+To reference chapter, type in the chapter title inside square brackets. For instance, this command references our first chapter [Prerequisites].  
+The same applies to section headers. Just type [section header name] e.g [Page breaks].
+
+#### Table & Figure  References
+To reference figures use syntax \@ref(fig:code chunk label) or \@ref(tab:code chunk label) for tables. 
+For instance, we created our kable table in the code chunk named kable. To reference this table anywhere in our document, just type in command \@ref(tab:kable).   
+This will insert a reference link to table \@ref(tab:kable).  
+
+### Pandoc & Knitr
+`Pandoc` is a universal document converter designed to convert thousands of markup languages. So when we create our document in markdown and want to output it as a pdf, pandoc does the work.   
+`Knitr` on the other hand, is an r package that enables the integration of yaml, text and code evaluations into an output document. `Knitr` contains the `Knit` function through which we render our rmarkdown documents to our desired output format.
+When you render a document in rmarkdown (or call the knit function), the rmarkdown document is converted to a basic markdown language (.md) which is then converted by pandoc to say html, pdf, word, etc as  per user specifications.
+`Knitr` and `pandoc` come in bundled with rmarkdown, and thus, there is no need to install them separately.    
+However, should you need to install pandoc as standalone, you may do so from the [Pandoc homepage](http://pandoc.org). In this regard, it is important to note that in as much as standalone installations may provide  much higher versions of the software than what is already bundled in r, they are often not streamlined for use in r, and may thus cause some compatibility issues.

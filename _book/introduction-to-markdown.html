@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>An introduction to markdown basics</title>
+  <meta name="description" content="An introduction to markdown basics" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="An introduction to markdown basics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="An introduction to markdown basics" />
+  
+  
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2021-06-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="getting-started.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introduction-to-markdown.html"><a href="introduction-to-markdown.html"><i class="fa fa-check"></i><b>1</b> Introduction to markdown</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-markdown.html"><a href="introduction-to-markdown.html#open-a-markdown-file"><i class="fa fa-check"></i><b>1.1</b> Open a markdown file</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-markdown.html"><a href="introduction-to-markdown.html#about-rmarkdown"><i class="fa fa-check"></i><b>1.2</b> About rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#editing-in-markdown"><i class="fa fa-check"></i><b>2.1</b> Editing in markdown</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="getting-started.html"><a href="getting-started.html#bold-and-italic-text"><i class="fa fa-check"></i><b>2.1.1</b> Bold and italic text</a></li>
+<li class="chapter" data-level="2.1.2" data-path="getting-started.html"><a href="getting-started.html#create-lists"><i class="fa fa-check"></i><b>2.1.2</b> Create Lists</a></li>
+<li class="chapter" data-level="2.1.3" data-path="getting-started.html"><a href="getting-started.html#manual-line-breaks"><i class="fa fa-check"></i><b>2.1.3</b> Manual line breaks</a></li>
+<li class="chapter" data-level="2.1.4" data-path="getting-started.html"><a href="getting-started.html#insert-links"><i class="fa fa-check"></i><b>2.1.4</b> Insert links</a></li>
+<li class="chapter" data-level="2.1.5" data-path="getting-started.html"><a href="getting-started.html#insert-figuresimages"><i class="fa fa-check"></i><b>2.1.5</b> Insert figures/images</a></li>
+<li class="chapter" data-level="2.1.6" data-path="getting-started.html"><a href="getting-started.html#insert-block-quotes"><i class="fa fa-check"></i><b>2.1.6</b> Insert block quotes</a></li>
+<li class="chapter" data-level="2.1.7" data-path="getting-started.html"><a href="getting-started.html#insert-code-chunks"><i class="fa fa-check"></i><b>2.1.7</b> Insert code chunks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An introduction to markdown basics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">An introduction to markdown basics</h1>
+<p class="author"><em>Yihui Xie</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-06-09</em></p>
+</div>
+<div id="introduction-to-markdown" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction to markdown</h1>
+<div id="open-a-markdown-file" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Open a markdown file</h2>
+<p><strong>Prerequisites:</strong></p>
+<ol style="list-style-type: decimal">
+<li>You have installed R (<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>)</li>
+<li>You have installed RStudio (<a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>)</li>
+</ol>
+<p><strong>Steps;</strong></p>
+<ol style="list-style-type: decimal">
+<li>Launch your r/studio app.<br />
+</li>
+<li>Install rmarkdown package, use command <code>install.packages("rmarkdown")</code><br />
+</li>
+<li>If you intend to create .pdf documents install TinyTeX, use command <code>install.packages("tinytex")</code></li>
+</ol>
+<div id="installing-packages" class="section level4" number="1.1.0.1">
+<h4><span class="header-section-number">1.1.0.1</span> Installing packages</h4>
+<p>In markdown, packages are installed within a code chunk, i.e, between <code>{r}   and</code>.<br />
+To install a package, use command ‘install.packages(“name of package”)`.<br />
+Alternatively, from the menu bar, go the the tab ’Tools’ and select ‘Install Packages.’<br />
+In the ‘Install from’ field, select ‘Repository (CRAN),’ then enter the name(s) of packages to be installed, and leave the ‘Install to Library’ field as default.</p>
+<p><strong>Note:</strong> <em>Packages can only be installed once. To mean, if you close your r/rstudio app and come back to it the next day/session, you do not need to install the packages you already installed in your previous session. You will only need to load their libraries (we talk about this later)</em></p>
+</div>
+<div id="loading-libraries" class="section level4" number="1.1.0.2">
+<h4><span class="header-section-number">1.1.0.2</span> Loading Libraries</h4>
+<p>To be able to make use of the packages installed, you need to call their libraries. Most libraries take the name of the package. For instance, for the package <code>rmakdown</code>, the respective library is <code>rmarkdown</code>.<br />
+To call the library, use command <code>Library(rmarkdown)</code>.
+So in general to load/call libraries use command <code>Library(name of libarary)</code>.<br />
+<strong>Note:</strong> <em>Unlike packages,library functions expire when you close a project or end a session. Therefore, each time you open an r session, you have to load/call relevant libraries</em></p>
+</div>
+</div>
+<div id="about-rmarkdown" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> About rmarkdown</h2>
+<p>R markdown is a file document that allows you to write, save and execute code, as well as text and figures to help generate reproducible reports that can be shared in several formats.
+The file extension is .rmd.<br />
+A markdown file has three main sections;</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>YAML header</strong>
+This is where your document metadata go to e.g your document title, author, date, output file type etc.
+This parameters are set when opening a new .rmd file. And more can be set after.
+This section MUST always be at the beginning of your document and between a set of three dashes i.e three dashes before section and three dashes after section.</p></li>
+<li><p><strong>Text</strong>
+Your narration/prose in markdown format. More details about formatting in subsequent sections.</p></li>
+<li><p><strong>Code chunk(s)</strong><br />
+They start with ```{r}</p>
+<p>and end end with ```</p></li>
+</ol>
+<p>To create headers for your reports/document e.g. chapters, sub-chapters and so on; use the hash sign’#’ in front of the title. Sequentially increase the number of "#’ signs to denote subsequent header levels.<br />
+Insert blank line before each header (except in the beginning of document)</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="getting-started.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["markdown_guidebook.pdf", "markdown_guidebook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
